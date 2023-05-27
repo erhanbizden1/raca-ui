@@ -6,3 +6,31 @@
         font-family: 'Inter', sans-serif;
     }
   }
+
+@media (min-width: 1100px){
+    .discoverButton{
+        transition: .1s;
+    }  
+    .discoverButton:hover span{
+        transform: translateX(30px);
+        transition: .3s;
+    }
+    .discoverButton:hover img,.overlayItemImage button:hover img{
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
+        transform: translateX(-100px);
+        transition: .3s;
+    }
+    .overlayItemImage button img{
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
+    }
+    .overlayItemImage:hover button{
+        display: flex;
+        opacity: 1;
+    }
+    .overlayItemImage:hover h2{
+        bottom: 106px;
+    }
+    .discoverButton.viewDetails:hover img{
+        transform: translateX(-135px);
+    }
+}

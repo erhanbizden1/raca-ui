@@ -20,8 +20,8 @@ module.exports = {
       screens:{
         sm: '600px',
         md: '768px',
-        lg: '1320px',
-        xl: '1750px',
+        lg: '1024px',
+        xl: '1440px',
       }
     },
     extend: {
@@ -31,6 +31,8 @@ module.exports = {
         'white':"#EBECED",
         'grey':'#3D4655',
         'bg-blue': '#00193D',
+        "black-blue":'#1E1E1E',
+        'border':'#CBB181'
       },
     },
   },

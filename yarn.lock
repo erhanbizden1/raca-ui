@@ -471,6 +471,11 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
+"classnames@^2.3.2":
+  "integrity" "sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw=="
+  "resolved" "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
+  "version" "2.3.2"
+
 "client-only@0.0.1":
   "integrity" "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
   "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
@@ -817,6 +822,11 @@
     "object.entries" "^1.1.6"
     "object.fromentries" "^2.0.6"
     "semver" "^6.3.0"
+
+"eslint-plugin-jsx-control-statements@^3.0.0":
+  "integrity" "sha512-OAlTFVT6jyLXO6BVwYnlE95wKsT9LLRDs57+eOaDZjymTks7OYo0QEIfokKLfGrhfdgzAQz9Gsk5GqnVJbT/wg=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-jsx-control-statements/-/eslint-plugin-jsx-control-statements-3.0.0.tgz"
+  "version" "3.0.0"
 
 "eslint-plugin-react-hooks@^4.5.0":
   "integrity" "sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g=="

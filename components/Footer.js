@@ -16,15 +16,15 @@ export default function Footer() {
         getFooterData();
     }, []);
     return (
-        <div className="bg-bg-blue text-white py-16">
-            <div className="container flex items-center justify-between">
+        <div className="bg-bg-blue text-white py-16 hidden md:block">
+            <div className="container flex-none lg:flex items-center justify-between">
                 <div className="flex flex-col ">
                     <div className="mb-12">
                         <Image src={`http://localhost:1337/uploads/RACA_Logo_b7e06c945c.svg`} width={108} height={131} alt=""></Image>
                     </div>
                     <span className="text-[20px]">{footerData?.text}</span>
                 </div>
-                <ul className="flex item-center text-[20px]">
+                <ul className="flex-none flex item-center text-[20px] mt-[128px] lg:mt-0">
                     {
                         footerData?.footerMenuItem?.map((menuItem, index) => {
                             return (
@@ -50,7 +50,7 @@ export default function Footer() {
                         })
                     }
                 </ul>
-                <div className="flex item-center">
+                <div className="flex item-center mt-[128px] lg:mt-0">
                     {
                         footerData?.socialMedia?.map((socialItem, index) => {
                             return (
