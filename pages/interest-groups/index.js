@@ -1,7 +1,8 @@
 import Image from "next/image";
-import BreadCrumb from "../../components/BreadCrumb";
 import CallApiFromStrapi from "../../components/CallApiFromStrapi";
-export default function MemberShip({ memberShip }) {
+import BreadCrumb from "../../components/BreadCrumb";
+import Link from "next/link";
+export default function InterstGroup({ memberShip }) {
     console.log(memberShip)
     return (
         <div>
@@ -10,16 +11,13 @@ export default function MemberShip({ memberShip }) {
     background: #EBECED;
   }
 `}</style>
-            <BreadCrumb color="" staticText="Membership" />
+            <BreadCrumb color="#000C1F" staticText="Interest Groups" />
             <div className="container mb-[100px]">
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:my-[130px] items-center">
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:my-[130px] ">
                     <div className="order-last xl:order-first">
-                        <h1 className={`text-[36px] md:text-[64px] font-bold md:leading-[80px] lg:pl-0 lg:text-[88px] text-[#000C1F] font-merriweather leading-[54px] lg:leading-[111px]`}>{memberShip.title}</h1>
+                        <h1 className={`text-[36px] md:text-[64px]  md:leading-[80px] lg:pl-0 lg:text-[88px] text-[#000C1F] font-merriweather leading-[54px] lg:leading-[111px]`}>{memberShip.title}</h1>
                         <div>
-                            <div className="!text-[#3D4655] font-[500] text-lg" dangerouslySetInnerHTML={{ __html: memberShip.desc }} ></div>
-                            <button className="px-[20px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative text-white">
-                                <span className="text-lg transition ease-in-out">{memberShip.buttonText}</span>
-                            </button>
+                            <div className="!text-[#3D4655] font-[500] text-lg" dangerouslySetInnerHTML={{ __html: memberShip.description }} ></div>
                         </div>
                     </div>
                     <div className="relative">
@@ -27,7 +25,6 @@ export default function MemberShip({ memberShip }) {
                         <Image src="http://localhost:1337/uploads/MG_4173_R_2_Low_res_1_8f9f871d96.png" width={13} layout="responsive" height={13} alt=""></Image>
                     </div>
                 </div>
-
             </div>
             <section className="py-[132px]" style={{ background: "white" }}>
                 <div className="container">
@@ -47,9 +44,11 @@ export default function MemberShip({ memberShip }) {
                                                 />
                                                 <div>
                                                     <div className="absolute top-0 left-0 scale-[0.95] xl:hover:scale-[1.05] cursor-pointer transform transition-all  ease-in-out w-full h-full border border-border "></div>
-                                                    <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
+                                                    <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white text-[28px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
                                                     <div className="absolute left-1/2 -translate-x-1/2 ">
+                                                    <Link href={`/interest-groups/${overlayItem?.buttonSlug}`} >
                                                         <button className="opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
+                                                                
                                                             <span className="mr-[12px] text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
                                                             <Image
                                                                 src="/rightArrow.svg"
@@ -59,6 +58,7 @@ export default function MemberShip({ memberShip }) {
                                                                 className="translate-x-0 transition ease-in-out"
                                                             />
                                                         </button>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,15 +74,15 @@ export default function MemberShip({ memberShip }) {
                             memberShip?.cardOverlay.map((bigOverlayItem) => {
                                 if (bigOverlayItem.bigCard) {
                                     return (
-                                        <div key={bigOverlayItem.id} className="grid grid-col-2 lg:grid-cols-7 w-full relative">
+                                        <div key={bigOverlayItem.id} className="grid grid-cols-7 w-full relative">
                                             <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1]"></div>
-                                            <div className="col-span-1 lg:col-span-4 py-[15px] lg:py-[36px] px-[15px] md:px-[36px] order-1 ">
+                                            <div className="col-span-4 py-[36px] px-[36px]">
                                                 <div className="flex flex-col justify-between h-full">
                                                     <div>
                                                         <h2 className="text-black text-[28px] font-bold mb-2">{bigOverlayItem.title}</h2>
                                                         <p className="text-[#3D4655] max-w-[300px] m-0">Give yourself the advantage. There has never been a better time to join!</p>
                                                     </div>
-                                                    <button className="group lg:px-[73px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton w-full lg:w-max justify-center mt-[10px] lg:mt-0 xl:hover:bg-black text-white flex viewDetails">
+                                                    <button className="group px-[73px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton min-w-[268px] w-max xl:hover:bg-black text-white flex">
                                                         <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] group-hover:text-white">{bigOverlayItem?.buttonText}</span>
                                                         <Image
                                                             src="/rightArrow.svg"
@@ -95,7 +95,7 @@ export default function MemberShip({ memberShip }) {
                                                 </div>
 
                                             </div>
-                                            <div className="col-span-1 lg:col-span-3 p-[8px] lg:order-1">
+                                            <div className="col-span-3 p-[8px]">
                                                 <Image
                                                     src={`http://localhost:1337${bigOverlayItem?.cardImage?.data?.attributes?.url}`}
                                                     alt={`Thumbnail`}
@@ -121,7 +121,7 @@ export async function getServerSideProps() {
     const pagePopulate = {
         populate: ['thumbnail', 'cardOverlay.cardImage']
     };
-    const memberShip = await CallApiFromStrapi.getData('member-ship', pagePopulate);
+    const memberShip = await CallApiFromStrapi.getData('interest-group', pagePopulate);
 
     return {
         props: {

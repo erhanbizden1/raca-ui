@@ -11,8 +11,8 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '15px',
-        sm: '30px',
+        DEFAULT: '20px',
+        sm: '79px',
         lg: '30px',
         xl: '40px',
         '2xl': '40px',
@@ -20,7 +20,7 @@ module.exports = {
       screens:{
         sm: '600px',
         md: '768px',
-        lg: '1024px',
+        lg: '1023px',
         xl: '1440px',
       }
     },
