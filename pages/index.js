@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BreadCrumb from "../components/BreadCrumb";
 import CallApiFromStrapi from "../components/CallApiFromStrapi";
 import DefaultCard from "../components/DefaultCard";
 

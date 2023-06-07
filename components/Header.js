@@ -33,10 +33,17 @@ export default function Header() {
             document.body.classList.remove('overflow-hidden')
         }
     }, [sideDrawer]);
-    // ${router.pathname  === "/membership" ? "text-white" : "text-black"}
+    useEffect(() => {
+        if (sideDrawer) {
+            setSideDrawer(!sideDrawer);
+        }
+      }, [router.asPath]);
+
     return (
 
-        <div className={classNames(sideDrawer ? "text-white" : "text-black ", `container py-6 text-lg  flex justify-between relative z-10`)}>
+        <div className={classNames(sideDrawer ? "text-white" : "text-black ", `container py-6 text-lg 
+        ${router.pathname  === "/reciprocal-clubs" || router.pathname  === "/about-the-club" || router.pathname  === "/accommodation" || router.pathname  === "/functions" ? "text-white" : "text-black"}  
+        flex justify-between transition-all ease-in-out relative z-10`)}>
             <HamburgerMenu show={sideDrawer} menuData={headerData?.hamburgerMenu} />
             <ul className="hidden items-center xl:flex ">
                 {
@@ -45,7 +52,7 @@ export default function Header() {
                 {
                     headerData?.leftMenuItem.map((menuItem) => {
                         return (
-                            <li key={menuItem.id} className="mr-16">
+                            <li key={menuItem.id} className={`mr-16 ${menuItem.link === router.asPath ? "pointer-events-none  underline underline-offset-8" : ""}`}>
                                 <Link href={menuItem.link}>{menuItem.text}</Link>
                             </li>
                         )
@@ -56,19 +63,19 @@ export default function Header() {
                 <Image src={`http://localhost:1337/uploads/RACA_Logo_b7e06c945c.svg`} width={52} height={63} alt=""></Image>
             </Link>
             <ul className="items-center hidden xl:flex">
-                <div className="flex items-center ml-16 cursor-pointer">
-                    <Image src="http://localhost:1337/uploads/search_908fe7e0bf.svg" width={13} height={13} alt=""></Image>
+                <div className={`flex items-center ml-16 cursor-pointer ${sideDrawer ? "imgFilter": ""}`}>
+                <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={13} height={13} alt=""></Image>
                     <li className="pl-[6px]">
                         Search
                     </li>
                 </div>
-                <div className="flex items-center ml-16 cursor-pointer">
+                <div className={`flex items-center ml-16 cursor-pointer ${sideDrawer ? "imgFilter": ""}`}>
                     <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={13} height={13} alt=""></Image>
                     <li className="pl-[6px]">
                         Log In
                     </li>
                 </div>
-                <div className="flex items-center ml-16 cursor-pointer" onClick={toggleSideDrawer}>
+                <div  className={`flex items-center ml-16 cursor-pointer `} onClick={toggleSideDrawer}>
                     <Image src={sideDrawer ? "http://localhost:1337/uploads/close_056bf5ed87.svg":"http://localhost:1337/uploads/menu_b8b132337f.svg" } width={13} height={13} alt=""></Image>
                     <li className={`pl-[6px] ${sideDrawer ? "text-[#CBB181]": ""}`}>
                         {sideDrawer ? "Close" : "Menu"}
