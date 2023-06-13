@@ -6,72 +6,166 @@
 
 
 @layer base {
-    html {
-        font-family: 'Inter', sans-serif;
-    }
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@media (min-width: 1100px) {
+  .discoverButton {
+    transition: .1s;
   }
 
-@media (min-width: 1100px){
-    .discoverButton{
-        transition: .1s;
-    }  
-    .discoverButton:hover span{
-        transform: translateX(30px);
-        transition: .3s;
-    }
-    .discoverButton:hover img,.overlayItemImage button:hover img{
-        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
-        transform: translateX(-100px);
-        transition: .3s;
-    }
-    .overlayItemImage button img,.imgFilter img{
-        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
-    }
-    .overlayItemImage:hover button{
-        display: flex;
-        opacity: 1;
-    }
-    .overlayItemImage:hover h2{
-        bottom: 106px;
-    }
-    .discoverButton.viewDetails:hover img{
-        transform: translateX(-135px);
-    }
-    .overlayItemImage:hover h2.imgNone{
-        bottom: 40px;
-    }
+  .discoverButton:hover span {
+    transform: translateX(30px);
+    transition: .3s;
+  }
+
+  .discoverButton:hover img,
+  .overlayItemImage button:hover img {
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
+    transition: .3s;
+  }
+
+  .overlayItemImage button img,
+  .imgFilter img {
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
+  }
+
+  .overlayItemImage:hover button {
+    display: flex;
+    opacity: 1;
+  }
+
+  .overlayItemImage:hover h2 {
+    bottom: 106px;
+  }
+
+  .discoverButton.viewDetails:hover img {
+    transform: translateX(-135px);
+  }
+
+  .overlayItemImage:hover h2.imgNone {
+    bottom: 40px;
+  }
 }
+
 .AccordionContent[data-state='open'] {
-    animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionContent[data-state='closed'] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionContentText {
+  padding: 15px 20px;
+}
+
+.AccordionChevron {
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionTrigger[data-state='open']>.AccordionChevron {
+  transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
   }
-  .AccordionContent[data-state='closed'] {
-    animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+
+  to {
+    height: var(--radix-accordion-content-height);
   }
-  .AccordionContentText {
-    padding: 15px 20px;
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
   }
-  
-  .AccordionChevron {
-    transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+
+  to {
+    height: 0;
   }
-  .AccordionTrigger[data-state='open'] > .AccordionChevron {
-    transform: rotate(180deg);
-  }
-  
-  @keyframes slideDown {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
+}
+
+.swiperCustom {
+  overflow: inherit !important;
+  clip-path: inset(-100vw -100vw -100vw 0);
+}
+
+.swiperCustom .swiper-wrapper {
+  overflow: inherit;
+}
+
+.swiperCustom .swiper-slide {
+  scale: 0.92;
+  transition: .5s;
+  opacity: .5;
+}
+
+.swiperCustom .swiper-slide.swiper-slide-active {
+  scale: 1;
+  opacity: 1;
+}
+
+.swiperCustom.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperCustom .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperCustom .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiperCustom .swiper-button-prev,
+.swiperCustom .swiper-button-next {
+  color: white;
+}
+
+.swiperCustom .swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -36px !important;
+}
+
+.swiperCustom .swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  border-radius: 0px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: transparent;
+  border: 1px solid;
+  opacity: 1;
+}
+
+.swiperCustom .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #003A8F;
+  border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

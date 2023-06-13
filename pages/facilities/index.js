@@ -3,7 +3,6 @@ import CallApiFromStrapi from "../../components/CallApiFromStrapi";
 import DefaultCard from "../../components/DefaultCard";
 
 export default function Home({ homeData }) {
-    console.log(homeData)
     return (
         <>
             <style jsx global>{`
