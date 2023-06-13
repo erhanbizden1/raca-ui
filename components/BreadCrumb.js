@@ -12,14 +12,15 @@ export default function BreadCrumb({ staticText, secondText, thirdText, forthTex
       crumb[i] = crumb[i].charAt(0).toUpperCase() + crumb[i].slice(1);
     }
     crumb = crumb.join(" ");
+
     return (
-      <div key={crumb} className={`mr-5 text-sm flex items-center hover:text-lava whitespace-nowrap`}>
+      <div key={crumb} className={`mr-5 text-sm flex items-center hover:text-lava whitespace-nowrap ${currentLink === router.asPath ? "pointer-events-none underline underline-offset-8	ml-[-10px]" : ""}`}>
         <Link href={currentLink} >
           {index === 0 && staticText ? staticText : index === 1 && secondText ? secondText : index === 2 && thirdText ? thirdText : index === 3 && forthText ? forthText : crumb}
         </Link>
         {currentLink !== router.asPath ?
           <div className="ml-[10px]">
-            <BiChevronRight />
+            {'>'}
           </div>
           : ""}
       </div>
@@ -37,7 +38,7 @@ export default function BreadCrumb({ staticText, secondText, thirdText, forthTex
               {">"}
             </div>
           </div>
-          <div className={`${currentLink === router.asPath ? `pointer-events-none underline underline-offset-8	ml-[-10px]` : ""}`}>
+          <div className="flex items-center">
           {crumbs}
           </div>
           
