@@ -2,10 +2,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import CallApiFromStrapi from "./CallApiFromStrapi";
-
+import { AutoComplete } from 'primereact/autocomplete';
+import Head from 'next/head';
 function Search({ show }) {
     const [searchData, setSearchData] = useState(null);
-    const [searchVal, setSearchVal] = useState("");
+    const [selectedCountry1, setSelectedCountry1] = useState(null);
+    const [filteredCountries, setFilteredCountries] = useState(null);
+    const [searchValueClear, setSearchValueClear] = useState(false);
+    const searchCountry = (event) => {
+        setTimeout(() => {
+            let _filteredCountries;
+            if (!event.query.trim().length) {
+                _filteredCountries = [...props.searchData.defaultCard];
+            }
+            else {
+                _filteredCountries = searchData.defaultCard.filter((country) => {
+                    return country.title.toLowerCase().startsWith(event.query.toLowerCase());
+                });
+            }
+            setFilteredCountries(_filteredCountries);
+        }, 250);
+    };
+    const searchValClick = (title) => {
+        setSearchValueClear(title)
+        location.reload();
+    }
+    const itemTemplate = (item) => {
+        return (
+            <div className="country-item" onClick={()=> {searchValClick(item.title)}}>
+                <Link href={`/club-news${item.buttonSlug}`}>
+                    <div>{item.title}</div>
+                </Link>
+            </div>
+        );
+    };
     const getHeaderData = async () => {
         const pagePopulate = {
             populate: ['thumbnail', 'defaultCard.cardImage']
@@ -15,20 +45,15 @@ function Search({ show }) {
     };
     useEffect(() => {
         getHeaderData();
+    
     }, []);
-    const onChangeHandler = (text) => {
-        let matches = [];
-        if(text.length > 0){
-            matches = searchData.defaultCard.filter(item => {
-                const regex = new RegExp(`${text}`,"gi")
-                return item.title.match(regex)
-            })
-        }
-        setSearchVal(searchVal)
-    }
+
     return (
         <>
-            <div className={show ? `sidedrawer transform translate-x-0 fixed top-0 right-0 w-full z-[-1] transition-all bg-black-blue duration-500 ease-in-out` : ` fixed top-0 right-0 w-0  z-[5] transform transition-all shadow-lg ease-in-out `}>
+            <Head>
+                <link rel="stylesheet" href="https://unpkg.com/primereact/resources/primereact.min.css" />
+            </Head>
+            <div className={show ? `sidedrawer transform translate-x-0 fixed top-0 right-0 w-full z-[-1] transition-all bg-[#1E1E1E] duration-500 ease-in-out` : ` fixed top-0 right-0 w-0  z-[5] transform transition-all shadow-lg ease-in-out `}>
 
                 <div className="container h-screen pt-[100px] overflow-y-auto searchScroll">
                     <div className={`flex items-center overflow-auto py-[25px] text-sm`}>
@@ -53,10 +78,9 @@ function Search({ show }) {
                                         alt={"search"}
                                         width={17}
                                         height={17}
-                                        className="top-1/2 absolute -translate-y-1/2 left-[27px]"
+                                        className="top-1/2 absolute z-10 -translate-y-1/2 left-[27px]"
                                     />
-
-                                    <input  onChange={e => onChangeHandler(e.target.value)} value={searchVal}  className="bg-[#EBECED] text-[#858B94] p-[14px] pl-[64px] w-full" type="text" id="first" name="first" placeholder="Search" />
+                                    <AutoComplete value={searchValueClear ? searchValueClear :selectedCountry1 } suggestions={filteredCountries} completeMethod={searchCountry} itemTemplate={itemTemplate} field="name" onChange={(e) => setSelectedCountry1(e.value)} aria-label="Countries" dropdownAriaLabel="Select Country" />
                                 </div>
                             </div>
                             <button className="bg-[#003A8F] w-full text-center py-[14px] text-white text-lg col-span-2" type="submit">LOG IN</button>
@@ -86,8 +110,7 @@ function Search({ show }) {
                                             </div>
                                             <div className="px-[5px] pt-[24px] flex flex-col justify-between">
                                                 <div>
-                                                    <div className="text-white font-bold text-[24px]">{cardItem.title}</div>
-                                                    <div className="mt-[20px] text-[#C2C5C9]" dangerouslySetInnerHTML={{ __html: cardItem.desc }} ></div>
+                                                    <div className="text-white font-bold text-[16px]">{cardItem.title}</div>
                                                 </div>
                                                 {
                                                     cardItem.seeDetailsActive ?

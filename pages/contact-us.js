@@ -34,7 +34,7 @@ export default function ContactUs({ contactUs }) {
             <BreadCrumb color="" staticText="Direction and Contacts" />
             <div className="container mb-[100px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:my-[50px] items-start">
-                    <div className="order-last xl:order-first">
+                    <div>
                         <h1 className={`text-[36px] md:text-[64px] font-bold md:leading-[80px] lg:pl-0 lg:text-[88px] text-[#000C1F] font-merriweather leading-[54px] lg:leading-[111px]`}>{contactUs.title}</h1>
                         <div>
                             <div className="!text-[#3D4655] font-[500] text-lg" dangerouslySetInnerHTML={{ __html: contactUs.description }} ></div>

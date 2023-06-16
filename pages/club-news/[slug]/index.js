@@ -1,7 +1,7 @@
 import CallApiFromStrapi from "../../../components/CallApiFromStrapi";
 import BreadCrumb from "../../../components/BreadCrumb";
 import DetailPage from "../../../components/pageDetail";
-export default function ClubHistory({ aboutDetail }) {
+export default function ClubNews({ clubNewsDetail }) {
     return (
         <>
             <div>
@@ -11,7 +11,7 @@ export default function ClubHistory({ aboutDetail }) {
                     }
                     `}</style>
                 <BreadCrumb />
-                <DetailPage detailPage={aboutDetail} />
+                <DetailPage detailPage={clubNewsDetail} />
             </div>
         </>
     )
@@ -25,11 +25,11 @@ export async function getServerSideProps(context) {
             }
         }
     };
-    const aboutDetail = await CallApiFromStrapi.getData('about-the-club-details', pagePopulate);
+    const clubNewsDetail = await CallApiFromStrapi.getData('club-news-details', pagePopulate);
 
     return {
         props: {
-            aboutDetail: aboutDetail?.data[0]?.attributes
+            clubNewsDetail: clubNewsDetail?.data[0]?.attributes
         }
     };
 }

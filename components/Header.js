@@ -85,20 +85,20 @@ export default function Header() {
                     <Image src={`http://localhost:1337/uploads/RACA_Logo_b7e06c945c.svg`} width={52} height={63} alt=""></Image>
                 </Link>
                 <ul className="items-center flex">
-                    <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""}`} onClick={toggleSearch}>
-                        <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={13} height={13} alt=""></Image>
+                    <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={toggleSearch}>
+                        <Image src="/search.svg" width={13} height={13} alt=""></Image>
                         <li className="pl-[6px]">
                             Search
                         </li>
                     </div>
-                    <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""}`}>
+                    <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`}>
                         <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={13} height={13} alt=""></Image>
                         <li className="pl-[6px]">
                             Log In
                         </li>
                     </div>
-                    <div className={`flex items-center ml-16 cursor-pointer `} onClick={toggleSideDrawer}>
-                        <Image src={sideDrawer ? "http://localhost:1337/uploads/close_056bf5ed87.svg" : "http://localhost:1337/uploads/menu_b8b132337f.svg"} width={13} height={13} alt=""></Image>
+                    <div className={`flex items-center ml-16 cursor-pointer ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={searchOpen ? toggleSearch :toggleSideDrawer}>
+                        <Image src={sideDrawer || searchOpen ? "http://localhost:1337/uploads/close_056bf5ed87.svg" : "http://localhost:1337/uploads/menu_b8b132337f.svg"} width={13} height={13} alt=""></Image>
                         <li className={`pl-[6px] ${sideDrawer || searchOpen ? "text-[#CBB181]" : ""}`}>
                             {sideDrawer || searchOpen ? "Close" : "Menu"}
                         </li>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import CallApiFromStrapi from "../../components/CallApiFromStrapi";
 
@@ -51,16 +52,18 @@ export default function DiningAndBars({ homeData }) {
                                                         <h2 className="text-black text-[28px] font-bold mb-2">{defaultCardBig.title}</h2>
                                                         <p className="text-[#3D4655] m-0 xl:max-w-[400px]">{defaultCardBig.desc}</p>
                                                     </div>
-                                                    <button className="group md:px-[73px] xl:mr-[20px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton md:w-max justify-center mt-[10px] md:mt-[54px] xl:hover:bg-black text-white flex viewDetails">
-                                                        <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] group-hover:text-white">{defaultCardBig?.buttonText}</span>
-                                                        <Image
-                                                            src="/rightArrow.svg"
-                                                            alt={"arrow"}
-                                                            width={19}
-                                                            height={13}
-                                                            className="translate-x-0 transition ease-in-out"
-                                                        />
-                                                    </button>
+                                                    <Link href={`/club-news${defaultCardBig.buttonSlug ? defaultCardBig.buttonSlug : ""}`}>
+                                                        <button className="group md:px-[73px] xl:mr-[20px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton md:w-max justify-center mt-[10px] md:mt-[54px] xl:hover:bg-black text-white flex viewDetails">
+                                                            <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] group-hover:text-white">{defaultCardBig?.buttonText}</span>
+                                                            <Image
+                                                                src="/rightArrow.svg"
+                                                                alt={"arrow"}
+                                                                width={19}
+                                                                height={13}
+                                                                className="translate-x-0 transition ease-in-out"
+                                                            />
+                                                        </button>
+                                                    </Link>
                                                 </div>
                                             </div>
 
@@ -76,57 +79,61 @@ export default function DiningAndBars({ homeData }) {
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-[24px] justify-center mt-[64px]">
                         {
                             homeData?.defaultCard.map((cardItem) => {
-                                if (!cardItem.bigCard){
-                                return (
-                                    <div key={cardItem.id} className="max-w-[504px] relative lg:mt-0 m-auto lg:m-0 " id="cardItem">
-                                        <div className="relative ">
-                                            <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.96] "></div>
-                                            <Image
-                                                src={`http://localhost:1337${cardItem?.cardImage.data.attributes.url}`}
-                                                alt={`Card Image`}
-                                                width={372}
-                                                height={247}
-                                                className="max-h-[247px]"
-                                                objectFit="cover"
-                                                layout="responsive"
-                                            />
-                                        </div>
-                                        <div className="px-[5px] pt-[24px] flex flex-col justify-between">
-                                            <div>
-                                                <div className="text-black font-bold text-[24px]">{cardItem.title}</div>
-                                                <div className="mt-[20px] text-grey" dangerouslySetInnerHTML={{ __html: cardItem.desc }} ></div>
+                                if (!cardItem.bigCard) {
+                                    return (
+                                        <div key={cardItem.id} className="max-w-[504px] relative lg:mt-0 m-auto lg:m-0 " id="cardItem">
+                                            <div className="relative ">
+                                                <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.96] "></div>
+                                                <Image
+                                                    src={`http://localhost:1337${cardItem?.cardImage.data.attributes.url}`}
+                                                    alt={`Card Image`}
+                                                    width={372}
+                                                    height={247}
+                                                    className="max-h-[247px]"
+                                                    objectFit="cover"
+                                                    layout="responsive"
+                                                />
                                             </div>
-                                            {
-                                                cardItem.seeDetailsActive ?
-                                                    <div className="flex items-center  mt-[36px]">
-                                                        <button className="xl:min-w-[280px] mt- lg:px-[20px] border-[2px] mr-[24px] border-black py-[15px] flex items-center relative discoverButton w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
-                                                            <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
-                                                            <Image
-                                                                src="/rightArrow.svg"
-                                                                alt={"arrow"}
-                                                                width={19}
-                                                                height={13}
-                                                                className="translate-x-0 transition ease-in-out"
-                                                            />
-                                                        </button>
-                                                        <span className="text-lg underline">SEE DETAILS</span>
-                                                    </div> :
-                                                    <button className="mt-[36px] lg:px-[20px] border-[2px] border-black py-[15px] flex items-center relative discoverButton !w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
-                                                        <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
-                                                        <Image
-                                                            src="/rightArrow.svg"
-                                                            alt={"arrow"}
-                                                            width={19}
-                                                            height={13}
-                                                            className="translate-x-0 transition ease-in-out"
-                                                        />
-                                                    </button>
+                                            <div className="px-[5px] pt-[24px] flex flex-col justify-between">
+                                                <div>
+                                                    <div className="text-black font-bold text-[24px]">{cardItem.title}</div>
+                                                    <div className="mt-[20px] text-grey" dangerouslySetInnerHTML={{ __html: cardItem.desc }} ></div>
+                                                </div>
+                                                {
+                                                    cardItem.seeDetailsActive ?
+                                                        <div className="flex items-center  mt-[36px]">
+                                                            <Link href={`/club-news${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
+                                                                <button className="xl:min-w-[280px] mt- lg:px-[20px] border-[2px] mr-[24px] border-black py-[15px] flex items-center relative discoverButton w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
+                                                                    <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
+                                                                    <Image
+                                                                        src="/rightArrow.svg"
+                                                                        alt={"arrow"}
+                                                                        width={19}
+                                                                        height={13}
+                                                                        className="translate-x-0 transition ease-in-out"
+                                                                    />
+                                                                </button>
+                                                            </Link>
+                                                            <span className="text-lg underline">SEE DETAILS</span>
+                                                        </div> :
+                                                        <Link href={`/club-news${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
+                                                            <button className="mt-[36px] lg:px-[20px] border-[2px] border-black py-[15px] flex items-center relative discoverButton !w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
+                                                                <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
+                                                                <Image
+                                                                    src="/rightArrow.svg"
+                                                                    alt={"arrow"}
+                                                                    width={19}
+                                                                    height={13}
+                                                                    className="translate-x-0 transition ease-in-out"
+                                                                />
+                                                            </button>
+                                                        </Link>
 
-                                            }
+                                                }
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            }
+                                    )
+                                }
                             })
                         }
                     </div>

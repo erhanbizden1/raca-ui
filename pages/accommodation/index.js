@@ -2,36 +2,26 @@ import Image from "next/image";
 import CallApiFromStrapi from "../../components/CallApiFromStrapi";
 import DefaultCard from "../../components/DefaultCard";
 import BreadCrumb from "../../components/BreadCrumb";
-export default function Accommondation({ homeData }) {
+import SliderContent from "../../components/SliderContent";
+export default function Accommondation({ accommondation }) {
 
     return (
-        <>
+        <div>
             <style jsx global>{`
   body {
     background: #000C1F;
   }
 `}</style>
-            <BreadCrumb color="#EBECED" staticText="Accommondation" />
-            <div className="container mb-[100px]">
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:my-[130px] items-start">
-                    <div className="order-last xl:order-first">
-                        <h1 className={`text-[36px] md:text-[64px] font-bold md:leading-[80px] lg:pl-0 lg:text-[88px] text-[#EBECED] font-merriweather leading-[54px] lg:leading-[111px]`}>{homeData.title}</h1>
-                        <div>
-                            <div className="text-[#C2C5C9] font-[500] text-lg" dangerouslySetInnerHTML={{ __html: homeData.description }} ></div>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.05]"></div>
-                        <Image src={`http://localhost:1337${homeData?.thumbnail.data.attributes.url}`} width={13} layout="responsive" height={13} alt=""></Image>
-                    </div>
-                </div>
+            <BreadCrumb color="white" staticText="Accommondation" />
+            <div className="overflow-hidden">
+                <SliderContent sliderContent={accommondation} color="white" />
             </div>
             <section className=" text-black bg-white py-[148px]">
                 <div className="container">
-                    <h1 className="font-merriweather text-[36px] lg:text-[48px] text-center leading-[54px]">{homeData.contentTitle}</h1>
+                    <h1 className="font-merriweather text-[36px] lg:text-[48px] text-center leading-[54px]">{accommondation.contentTitle}</h1>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center">
                         {
-                            homeData?.defaultCard.map((cardItem) => {
+                            accommondation?.defaultCard.map((cardItem) => {
                                 if (!cardItem.bigCard) {
                                     return (
                                         <DefaultCard key={cardItem.id} seeDetailsActive={cardItem.seeDetailsActive} cardItem={cardItem} />
@@ -44,7 +34,7 @@ export default function Accommondation({ homeData }) {
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-[20px] lg:gap-[24px] ">
                         {
-                            homeData?.defaultCard.map((defaultCardBig) => {
+                            accommondation?.defaultCard.map((defaultCardBig) => {
                                 if (defaultCardBig.bigCard) {
                                     return (
                                         <div key={defaultCardBig.id} className="grid grid-col-2 lg:grid-cols-7 w-full relative">
@@ -101,18 +91,18 @@ export default function Accommondation({ homeData }) {
                 </div>
             </section>
 
-        </>
+        </div>
     )
 }
 export async function getServerSideProps() {
     const pagePopulate = {
-        populate: ['thumbnail', 'defaultCard.cardImage']
+        populate: ['slider.thumbnail', 'defaultCard.cardImage']
     };
-    const homeJson = await CallApiFromStrapi.getData('accommodation', pagePopulate);
+    const accommondation = await CallApiFromStrapi.getData('accommodation', pagePopulate);
 
     return {
         props: {
-            homeData: homeJson?.data?.attributes
+            accommondation: accommondation?.data?.attributes
         }
     };
 }
