@@ -2,6 +2,8 @@ import Image from "next/image";
 import CallApiFromStrapi from "../components/CallApiFromStrapi";
 import DefaultCard from "../components/DefaultCard";
 import CardOverlay from "../components/CardOverlay";
+import Link from "next/link"
+
 export default function Home({ homeData }) {
 
   return (
@@ -11,9 +13,11 @@ export default function Home({ homeData }) {
           <h1 className={`text-[36px] md:text-[64px]  md:leading-[80px] lg:pl-0 lg:text-[88px] text-blue font-merriweather leading-[54px] lg:leading-[111px]`}>{homeData.title}</h1>
           <div>
             <div className="text-[#000C1F]" dangerouslySetInnerHTML={{ __html: homeData.description }} ></div>
-            <button className="px-[73px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
-              <span className="text-lg transition ease-in-out">Learn More</span>
-            </button>
+            <Link href={homeData.buttonLink}>
+              <button className="px-[73px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
+                <span className="text-lg transition ease-in-out">Learn More</span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -27,7 +31,7 @@ export default function Home({ homeData }) {
       />
       <section className="container text-black">
         <h1 className="font-merriweather text-[36px] lg:text-[48px] text-center my-[84px] leading-[54px]">{homeData.contentTitle}</h1>
-        <div className="flex-none lg:flex gap-[24px] items-center justify-center">
+        <div className="flex-none lg:flex gap-[24px] items-start justify-center">
           {
             homeData?.defaultCard.map((cardItem) => {
               return (

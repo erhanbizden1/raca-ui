@@ -29,7 +29,7 @@ export default function BreadCrumb({ staticText, secondText, thirdText, forthTex
   return (
     <Fragment>
       <div className="container">
-        <div className={`flex items-center overflow-auto py-[25px] text-[${color}] text-sm`}>
+        <div className={`flex items-center overflow-auto py-[25px] !text-[${color}] text-sm`}>
           <div className={`cursor-pointer hover:text-lava mr-5 flex items-center `}>
             <Link href="/">
               HomaPage

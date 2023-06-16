@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BreadCrumb from "../../components/BreadCrumb";
 import CallApiFromStrapi from "../../components/CallApiFromStrapi";
+import SliderContent from "../../components/SliderContent";
 
 export default function BoardDirectors({ directors }) {
     return (
@@ -12,26 +13,7 @@ export default function BoardDirectors({ directors }) {
   }
 `}</style>
             <BreadCrumb />
-            <div className="container mb-[100px]">
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:my-[130px] items-start">
-                    <div className="order-last xl:order-first">
-                        <h1 className={`text-[36px] md:text-[64px] font-bold md:leading-[80px] lg:pl-0 lg:text-[88px] text-[#000C1F] font-merriweather leading-[54px] lg:leading-[111px]`}>{directors.title}</h1>
-                        <div>
-                            <div className="!text-[#3D4655] font-[500] text-lg" dangerouslySetInnerHTML={{ __html: directors.description }} ></div>
-                            <Link href={directors.buttonLink}>
-                                <button className="px-[20px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative text-white">
-                                    <span className="text-lg transition ease-in-out">{directors.buttonText}</span>
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.05]"></div>
-                        <Image src={`http://localhost:1337${directors.thumbnail.data.attributes.url}`} width={13} layout="responsive" height={13} alt=""></Image>
-                    </div>
-                </div>
-
-            </div>
+            <SliderContent sliderContent={directors} />
             <section className="bg-[#FFFF] py-[65px]">
                 <div className="grid grid-cols-1 justify-center gap-[20px] lg:gap-[24px] xl:px-[150px]    ">
                     {
@@ -156,7 +138,7 @@ export default function BoardDirectors({ directors }) {
 }
 export async function getServerSideProps() {
     const pagePopulate = {
-        populate: ['thumbnail', 'cardOverlay.cardImage']
+        populate: ['cardOverlay.cardImage', 'slider.thumbnail']
     };
     const directors = await CallApiFromStrapi.getData('board-director', pagePopulate);
 
