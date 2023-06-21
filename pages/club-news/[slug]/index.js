@@ -10,7 +10,6 @@ export default function ClubNews({ clubNewsDetail }) {
                         background: #EBECED;
                     }
                     `}</style>
-                <BreadCrumb />
                 <DetailPage detailPage={clubNewsDetail} />
             </div>
         </>

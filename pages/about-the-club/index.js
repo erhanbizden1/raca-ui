@@ -12,7 +12,7 @@ export default function About({ about }) {
     background: #000C1F;
   }
 `}</style>
-      <BreadCrumb color="white" staticText="The Club" />
+      <BreadCrumb color="#FFFFFF" staticText="The Club" />
       <SliderContent sliderContent={about} color="white" />
       <section className=" text-black bg-white py-[48px] lg:py-[124px]">
         <div className="lg:px-[138px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3  gap-[24px] items-start justify-center container">

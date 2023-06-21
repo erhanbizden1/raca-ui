@@ -56,7 +56,7 @@ export default function Footer() {
                             return (
                                 <div key={index} className="ml-6">
                                     <Link href={socialItem?.link}>
-                                        <Image src={`http://localhost:1337${socialItem?.icon?.data?.attributes.url}`} width={24} height={24} alt=""></Image>
+                                        <Image src={`http://localhost:1337${socialItem?.icon?.data?.attributes.url}`} width={54} height={54} alt=""></Image>
                                     </Link>
                                 </div>
                             )

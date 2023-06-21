@@ -55,7 +55,7 @@ export default function Accommondation({ accommondation }) {
                                                                         alt={"arrow"}
                                                                         width={19}
                                                                         height={13}
-                                                                        className="translate-x-0 transition ease-in-out"
+                                                                        className="group-hover:-translate-x-[140px] translate-x-0 transition ease-in-out"
                                                                     />
                                                                 </button>
                                                                 <span className="lg:text-lg underline text-sm">SEE DETAILS</span>
@@ -67,7 +67,7 @@ export default function Accommondation({ accommondation }) {
                                                                     alt={"arrow"}
                                                                     width={19}
                                                                     height={13}
-                                                                    className="translate-x-0 transition ease-in-out"
+                                                                    className="group-hover:-translate-x-[140px] translate-x-0 transition ease-in-out"
                                                                 />
                                                             </button>
                                                     }

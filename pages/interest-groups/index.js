@@ -6,7 +6,7 @@ import CardOverlay from "../../components/CardOverlay";
 import SliderContent from "../../components/SliderContent";
 export default function InterestGroup({ interestGroup }) {
     return (
-        <div>
+        <div className="overflow-hidden">
             <style jsx global>{`
   body {
     background: #EBECED;

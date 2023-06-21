@@ -22,7 +22,7 @@
   }
 
   .discoverButton:hover img,
-  .overlayItemImage button:hover img {
+  .overlayItemImage button:hover img ,.discoverButton.search img{
     filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(264deg) brightness(103%) contrast(101%);
     transition: .3s;
   }
@@ -181,11 +181,16 @@ input[type="number"] {
   left: 434px !important;
   transition: .5s;
 }
-.p-autocomplete-panel li{
-  padding: 10px;
-  background-color: white !important;
-  transition: .5s;
-}
 .p-autocomplete-panel li:hover{
   background-color: rgb(204, 204, 204) !important;
+}
+.menuItemList ul:first-child a:first-child:hover {
+  color: red;
+}
+.descriptionBox{
+  display: -webkit-box;
+    max-width: 400px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

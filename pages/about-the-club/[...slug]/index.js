@@ -10,7 +10,6 @@ export default function ClubHistory({ aboutDetail }) {
                         background: #EBECED;
                     }
                     `}</style>
-                <BreadCrumb />
                 <DetailPage detailPage={aboutDetail} />
             </div>
         </>
