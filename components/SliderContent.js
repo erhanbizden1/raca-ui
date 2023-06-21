@@ -10,9 +10,9 @@ export default function SliderContent({ sliderContent,color }) {
         <div className="container mb-[100px]">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:mt-[70px] lg:pb-[100px] ">
                 <div className="order-last xl:order-first">
-                    <h1 className={`text-[36px] md:text-[64px]  md:leading-[80px] lg:pl-0 lg:text-[88px] !text-[${color ? color : "#000C1F"}] font-merriweather leading-[54px] lg:leading-[111px]`}>{sliderContent.title}</h1>
+                    <h1 className={`text-[36px] md:text-[64px]  md:leading-[80px] lg:pl-0 lg:text-[88px] font-merriweather leading-[54px] lg:leading-[111px]`} style={{color:color ? color : "#000C1F"}}>{sliderContent.title}</h1>
                     <div>
-                        <div className={`!text-[${color ? color : "#3D4655"}]  ${color ? "opacity-80":"opacity-100"} font-[500] text-lg`} dangerouslySetInnerHTML={{ __html: sliderContent.description }} ></div>
+                        <div className={` font-[500] text-lg`} dangerouslySetInnerHTML={{ __html: sliderContent.description }} style={{color:color ? color : "#000C1F",opacity:color ? "opacity-80":"opacity-100"}}></div>
                     </div>
                     {
                         sliderContent?.buttonLink && sliderContent?.buttonText ?
@@ -32,7 +32,6 @@ export default function SliderContent({ sliderContent,color }) {
                         clickable: true,
                     }}
                     modules={[Navigation, Pagination]}
-
                     className="mySwiper swiperCustom"
                 >
                     {

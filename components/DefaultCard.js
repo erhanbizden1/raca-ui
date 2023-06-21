@@ -14,12 +14,11 @@ export default function DefaultCard({ cardItem, seeDetailsActive }) {
             <div className="px-[34px] pt-[24px] pb-[36px] flex flex-col justify-between ">
                 <div>
                     <div className="text-black font-bold text-[28px]">{cardItem.title}</div>
-                    <div className="mt-[20px] text-grey lg:pr-[105px]" dangerouslySetInnerHTML={{ __html: cardItem.desc }} ></div>
+                    <div className="mt-[20px] text-grey lg:pr-[105px] descriptionBox" dangerouslySetInnerHTML={{ __html: cardItem.desc }} ></div>
                 </div>
                 <Link href={cardItem.buttonSlug ? cardItem.buttonSlug : ""}>
                 {
                     seeDetailsActive ?
-                    
                         <div className="flex items-center  mt-[36px]">
                             <button className=" group lg:px-[20px] border-[2px] mr-[24px] border-black py-[15px] flex items-center relative discoverButton w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
                                 <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>

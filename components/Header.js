@@ -24,7 +24,7 @@ export default function Header() {
     }
     const getHeaderData = async () => {
         const headerPopulate = {
-            populate: ['rightMenuItem.menuItemIcon', 'leftMenuItem.menuItemIcon', 'logo', 'hamburgerMenu']
+            populate: ['leftMenuItem.menuItemIcon', 'logo', 'hamburgerMenu','hamburgerMenuRight.menuItem','hamburgerMenuRight.socialMedia.icon','hamburgerMenuRight.hoverImg']
         };
         const headerData = await CallApiFromStrapi.getData('header', headerPopulate).catch((error) => console.log(error));
         setHeaderData(headerData?.data?.attributes);
@@ -65,11 +65,10 @@ export default function Header() {
 
     return (
 
-        <div className={classNames(sideDrawer || searchOpen ? "text-white" : "text-black ", `container py-6 ${headerClass} text-lg ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "text-white" : "text-black"} transition-all ease-in-out relative z-10`)}>
+        <div className={classNames(sideDrawer || searchOpen ? "text-white" : "text-black ", `container py-6 ${headerClass} text-[20px] ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "text-white" : "text-black"} transition-all ease-in-out relative z-10`)}>
             <Search show={searchOpen} />
             <div className="flex justify-between">
-                <HamburgerMenu show={sideDrawer} menuData={headerData?.hamburgerMenu} />
-
+                <HamburgerMenu show={sideDrawer} menuData={headerData?.hamburgerMenu} hamburgerMenuRight={headerData?.hamburgerMenuRight}/>
                 <ul className="hidden items-center xl:flex ">
                     {
                         headerData?.leftMenuItem.map((menuItem) => {
@@ -82,23 +81,27 @@ export default function Header() {
                     }
                 </ul>
                 <Link href="/" className="cursor-pointer">
-                    <Image src={`http://localhost:1337/uploads/RACA_Logo_b7e06c945c.svg`} width={52} height={63} alt=""></Image>
+                    <Image src={`http://localhost:1337/uploads/RACA_Logo_b7e06c945c.svg`} width={72} height={83} alt=""></Image>
                 </Link>
                 <ul className="items-center flex">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={toggleSearch}>
-                        <Image src="/search.svg" width={13} height={13} alt=""></Image>
+                        <Image src="/search.svg" width={20} height={20} alt=""></Image>
                         <li className="pl-[6px]">
                             Search
                         </li>
                     </div>
+                    <Link href="/log-in">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`}>
-                        <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={13} height={13} alt=""></Image>
+                    
+                        <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={20} height={20} alt=""></Image>
                         <li className="pl-[6px]">
                             Log In
                         </li>
+                        
                     </div>
+                    </Link>
                     <div className={`flex items-center ml-16 cursor-pointer ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={searchOpen ? toggleSearch :toggleSideDrawer}>
-                        <Image src={sideDrawer || searchOpen ? "http://localhost:1337/uploads/close_056bf5ed87.svg" : "http://localhost:1337/uploads/menu_b8b132337f.svg"} width={13} height={13} alt=""></Image>
+                        <Image src={sideDrawer || searchOpen ? "http://localhost:1337/uploads/close_056bf5ed87.svg" : "http://localhost:1337/uploads/menu_b8b132337f.svg"} width={20} height={20} alt=""></Image>
                         <li className={`pl-[6px] ${sideDrawer || searchOpen ? "text-[#CBB181]" : ""}`}>
                             {sideDrawer || searchOpen ? "Close" : "Menu"}
                         </li>
