@@ -43,7 +43,7 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                                         return (
                                             <div key={socialItem.id} className="mr-[36px] last:mr-0">
                                                 <Link href={socialItem.link} >
-                                                    <Image src={`http://localhost:1337${socialItem.icon.data.attributes.url}`} width={24} height={24} alt="" ></Image>
+                                                    <Image src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${socialItem.icon.data.attributes.url}`} width={24} height={24} alt="" ></Image>
                                                 </Link>
                                             </div>
                                         )
@@ -93,7 +93,7 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                                             return (
                                                 <div key={socialItem.id} className="mr-[20px] last:mr-0">
                                                     <Link href={socialItem.link} >
-                                                        <Image src={`http://localhost:1337${socialItem.icon.data.attributes.url}`} width={24} height={24} alt="" ></Image>
+                                                        <Image src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${socialItem.icon.data.attributes.url}`} width={24} height={24} alt="" ></Image>
                                                     </Link>
                                                 </div>
                                             )
@@ -110,7 +110,7 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                             </ul>
                             :
                             <ul className="hidden xl:block text-[#C2C5C9] text-center leading-[30px] text-[20px] border border-border transition-all duration-700 ease-in-out px-[5px] py-[5px] min-w-[504px] h-fit hamburgerRightSide relative min-h-[504px">
-                                <Image src={`http://localhost:1337${hamburgerMenuRight.hoverImg.data.attributes.url}`} layout="responsive" width={504} height={563} objectFit="contain" alt="" ></Image>
+                                <Image src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${hamburgerMenuRight.hoverImg.data.attributes.url}`} layout="responsive" width={504} height={563} objectFit="contain" alt="" ></Image>
                             </ul>
 
                     }

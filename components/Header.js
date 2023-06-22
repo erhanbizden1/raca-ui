@@ -81,7 +81,7 @@ export default function Header() {
                     }
                 </ul>
                 <Link href="/" className="cursor-pointer">
-                    <Image src={`http://localhost:1337/uploads/RACA_Logo_b7e06c945c.svg`} width={72} height={83} alt=""></Image>
+                    <Image src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com/uploads/RACA_Logo_b7e06c945c.svg`} width={72} height={83} alt=""></Image>
                 </Link>
                 <ul className="items-center flex">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={toggleSearch}>
@@ -93,7 +93,7 @@ export default function Header() {
                     <Link href="/log-in">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`}>
                     
-                        <Image src="http://localhost:1337/uploads/login_9086921e7e.svg" width={20} height={20} alt=""></Image>
+                        <Image src="http://pure-hamlet-08520-67aeef587ee8.herokuapp.com/uploads/login_9086921e7e.svg" width={20} height={20} alt=""></Image>
                         <li className="pl-[6px]">
                             Log In
                         </li>
@@ -101,7 +101,7 @@ export default function Header() {
                     </div>
                     </Link>
                     <div className={`flex items-center ml-16 cursor-pointer ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={searchOpen ? toggleSearch :toggleSideDrawer}>
-                        <Image src={sideDrawer || searchOpen ? "http://localhost:1337/uploads/close_056bf5ed87.svg" : "http://localhost:1337/uploads/menu_b8b132337f.svg"} width={20} height={20} alt=""></Image>
+                        <Image src={sideDrawer || searchOpen ? "http://pure-hamlet-08520-67aeef587ee8.herokuapp.com/uploads/close_056bf5ed87.svg" : "http://pure-hamlet-08520-67aeef587ee8.herokuapp.com/uploads/menu_b8b132337f.svg"} width={20} height={20} alt=""></Image>
                         <li className={`pl-[6px] ${sideDrawer || searchOpen ? "text-[#CBB181]" : ""}`}>
                             {sideDrawer || searchOpen ? "Close" : "Menu"}
                         </li>

@@ -3,10 +3,10 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
   env:{
-    API_URL: 'http://localhost:1337',
+    API_URL: 'https://pure-hamlet-08520-67aeef587ee8.herokuapp.com',
   },
   images: {
-    domains: ['localhost'],
+    domains: ['pure-hamlet-08520-67aeef587ee8.herokuapp.com'],
   },
 }
 

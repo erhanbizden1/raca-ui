@@ -22,7 +22,7 @@ export default function Funcitons({ funcitons }) {
                                 <div key={cardItem.id} className="max-w-[504px] relative mt-[32px] lg:mt-0 m-auto lg:m-0 border border-border p-[24px]">
                                     <div className="relative min-h-[295px]">
                                         <Image
-                                            src={`http://localhost:1337${cardItem?.cardImage.data.attributes.url}`}
+                                            src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${cardItem?.cardImage.data.attributes.url}`}
                                             alt={`Card Image`}
                                             className="w-full"
                                             objectFit="contain"
