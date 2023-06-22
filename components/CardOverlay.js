@@ -13,7 +13,7 @@ export default function CardOverlay(cardOverlay, centerText) {
                                     {
                                         overlayItem?.cardImage?.data?.attributes?.url ?
                                             <Image
-                                                src={`http://localhost:1337${overlayItem?.cardImage?.data?.attributes?.url}`}
+                                                src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${overlayItem?.cardImage?.data?.attributes?.url}`}
                                                 alt={`Thumbnail`} discoverButton
                                                 layout="fill"
                                                 objectFit="cover"

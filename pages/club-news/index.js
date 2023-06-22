@@ -38,7 +38,7 @@ export default function DiningAndBars({ homeData }) {
                                         <div key={defaultCardBig.id} className="w-full relative bg-[#C2C5C9] xl:bg-transparent">
                                             <div className="relative p-2 ">
                                                 <Image
-                                                    src={`http://localhost:1337${defaultCardBig?.cardImage?.data?.attributes?.url}`}
+                                                    src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${defaultCardBig?.cardImage?.data?.attributes?.url}`}
                                                     alt={`Thumbnail`}
                                                     className="w-full"
                                                     width={100}
@@ -85,7 +85,7 @@ export default function DiningAndBars({ homeData }) {
                                             <div className="relative ">
                                                 <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.96] "></div>
                                                 <Image
-                                                    src={`http://localhost:1337${cardItem?.cardImage.data.attributes.url}`}
+                                                    src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${cardItem?.cardImage.data.attributes.url}`}
                                                     alt={`Card Image`}
                                                     width={372}
                                                     height={247}
