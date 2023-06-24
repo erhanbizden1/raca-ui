@@ -22,7 +22,7 @@ export default function Home({ homeData }) {
         </div>
       </div>
       <Image
-        src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${homeData?.thumbnail.data[0].attributes.url}`}
+        src={`https://res.cloudinary.com/dyuydfuew/image/upload${homeData?.thumbnail.data[0].attributes.url}`}
         alt={`Thumbnail`}
         width={511}
         height={100}
