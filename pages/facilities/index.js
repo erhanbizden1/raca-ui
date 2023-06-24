@@ -20,7 +20,7 @@ export default function Facilites({ facilites }) {
                                     <div>
                                     <div className="min-h-[295px]  relative">
                                         <Image
-                                            src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${cardItem?.cardImage.data.attributes.url}`}
+                                            src={`https://res.cloudinary.com/dyuydfuew/image/upload${cardItem?.cardImage.data.attributes.url}`}
                                             alt={`Card Image`}
                                             className="w-full"
                                             objectFit="contain"

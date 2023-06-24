@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="container flex-none lg:flex items-center justify-between">
                 <div className="flex flex-col ">
                     <div className="mb-12">
-                        <Image src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com/uploads/RACA_Logo_b7e06c945c.svg`} width={108} height={131} alt=""></Image>
+                        <Image src={`https://res.cloudinary.com/dyuydfuew/image/upload/uploads/RACA_Logo_b7e06c945c.svg`} width={108} height={131} alt=""></Image>
                     </div>
                     <span className="text-[20px]">{footerData?.text}</span>
                 </div>
@@ -56,7 +56,7 @@ export default function Footer() {
                             return (
                                 <div key={index} className="ml-6">
                                     <Link href={socialItem?.link}>
-                                        <Image src={`http://pure-hamlet-08520-67aeef587ee8.herokuapp.com${socialItem?.icon?.data?.attributes.url}`} width={54} height={54} alt=""></Image>
+                                        <Image src={`https://res.cloudinary.com/dyuydfuew/image/upload${socialItem?.icon?.data?.attributes.url}`} width={54} height={54} alt=""></Image>
                                     </Link>
                                 </div>
                             )
