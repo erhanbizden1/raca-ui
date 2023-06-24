@@ -3,10 +3,10 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
   env:{
-    API_URL: 'https://pure-hamlet-08520-67aeef587ee8.herokuapp.com',
+    API_URL: 'gentle-mesa-18522-53cecce22509.herokuapp.com',
   },
   images: {
-    domains: ['pure-hamlet-08520-67aeef587ee8.herokuapp.com'],
+    domains: ['res.cloudinary.com'],
   },
 }
 
