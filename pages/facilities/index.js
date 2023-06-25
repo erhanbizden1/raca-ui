@@ -20,7 +20,7 @@ export default function Facilites({ facilites }) {
                                     <div>
                                     <div className="min-h-[295px]  relative">
                                         <Image
-                                            src={`https://res.cloudinary.com/dyuydfuew/image/upload${cardItem?.cardImage.data.attributes.url}`}
+                                            src={cardItem?.cardImage.data.attributes.url}
                                             alt={`Card Image`}
                                             className="w-full"
                                             objectFit="contain"

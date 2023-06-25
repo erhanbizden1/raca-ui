@@ -23,7 +23,7 @@ export default function BoardDirectors({ directors }) {
                                     <div key={overlayItem.id} className="overflow-hidden min-w-[300px] m-auto">
                                         <div className="relative overlayItemImage">
                                             <Image
-                                                src={`https://res.cloudinary.com/dyuydfuew/image/upload${overlayItem?.cardImage?.data?.attributes?.url}`}
+                                                src={overlayItem?.cardImage?.data?.attributes?.url}
                                                 alt={`Thumbnail`}
                                                 width={511}
                                                 height={100}
@@ -62,7 +62,7 @@ export default function BoardDirectors({ directors }) {
                                     <div key={overlayItem.id} className="w-full md:max-w-[300px] m-auto">
                                         <div className="relative overlayItemImage">
                                             <Image
-                                                src={`https://res.cloudinary.com/dyuydfuew/image/upload${overlayItem?.cardImage?.data?.attributes?.url}`}
+                                                src={overlayItem?.cardImage?.data?.attributes?.url}
                                                 alt={`Thumbnail`}
                                                 width={511}
                                                 height={100}
@@ -101,7 +101,7 @@ export default function BoardDirectors({ directors }) {
                                     <div key={overlayItem.id} className="w-full lg:max-w-[300px] m-auto">
                                         <div className="relative overlayItemImage">
                                             <Image
-                                                src={`https://res.cloudinary.com/dyuydfuew/image/upload${overlayItem?.cardImage?.data?.attributes?.url}`}
+                                                src={overlayItem?.cardImage?.data?.attributes?.url}
                                                 alt={`Thumbnail`}
                                                 width={511}
                                                 height={300}

@@ -22,7 +22,7 @@ export default function Funcitons({ funcitons }) {
                                 <div key={cardItem.id} className="max-w-[504px] relative mt-[32px] lg:mt-0 m-auto lg:m-0 border border-border p-[24px]">
                                     <div className="relative min-h-[295px]">
                                         <Image
-                                            src={`https://res.cloudinary.com/dyuydfuew/image/upload${cardItem?.cardImage.data.attributes.url}`}
+                                            src={cardItem?.cardImage.data.attributes.url}
                                             alt={`Card Image`}
                                             className="w-full"
                                             objectFit="contain"
