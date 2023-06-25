@@ -13,7 +13,7 @@ export default function CardOverlay(cardOverlay, centerText) {
                                     {
                                         overlayItem?.cardImage?.data?.attributes?.url ?
                                             <Image
-                                                src={`https://res.cloudinary.com/dyuydfuew/image/upload${overlayItem?.cardImage?.data?.attributes?.url}`}
+                                                src={overlayItem?.cardImage?.data?.attributes?.url}
                                                 alt={`Thumbnail`} discoverButton
                                                 layout="fill"
                                                 objectFit="cover"

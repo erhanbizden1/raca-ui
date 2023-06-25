@@ -35,7 +35,7 @@ export default function BigCardOverlay(cardOverlay) {
                                 </div>
                                 <div className="col-span-1 lg:col-span-3 p-[8px] lg:order-1">
                                     <Image
-                                        src={`https://res.cloudinary.com/dyuydfuew/image/upload${bigOverlayItem?.cardImage?.data?.attributes?.url}`}
+                                        src={bigOverlayItem?.cardImage?.data?.attributes?.url}
                                         alt={`Thumbnail`}
                                         width={491}
                                         height={100}

@@ -5,7 +5,6 @@ import CardOverlay from "../components/CardOverlay";
 import Link from "next/link"
 
 export default function Home({ homeData }) {
-
   return (
     <>
       <div className="container mb-[100px]">
@@ -22,7 +21,7 @@ export default function Home({ homeData }) {
         </div>
       </div>
       <Image
-        src={`https://res.cloudinary.com/dyuydfuew/image/upload${homeData?.thumbnail.data[0].attributes.url}`}
+        src={homeData?.thumbnail.data[0].attributes.url}
         alt={`Thumbnail`}
         width={511}
         height={100}
@@ -57,7 +56,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      homeData: homeJson?.data?.attributes
+      homeData: homeJson?.data.attributes
     }
   };
 }

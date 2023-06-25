@@ -81,7 +81,7 @@ export default function Header() {
                     }
                 </ul>
                 <Link href="/" className="cursor-pointer">
-                    <Image src={`https://res.cloudinary.com/dyuydfuew/image/upload/uploads/RACA_Logo_b7e06c945c.svg`} width={72} height={83} alt=""></Image>
+                    <Image src={`https://res.cloudinary.com/dyuydfuew/image/upload/v1687694132/RACA_Logo_26bb189bd5.svg`} width={72} height={83} alt=""></Image>
                 </Link>
                 <ul className="items-center flex">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={toggleSearch}>
@@ -93,7 +93,7 @@ export default function Header() {
                     <Link href="/log-in">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`}>
                     
-                        <Image src="https://res.cloudinary.com/dyuydfuew/image/upload/uploads/login_9086921e7e.svg" width={20} height={20} alt=""></Image>
+                        <Image src="https://res.cloudinary.com/dyuydfuew/image/upload/v1687631498/login_66ff7863cf.svg" width={20} height={20} alt=""></Image>
                         <li className="pl-[6px]">
                             Log In
                         </li>
@@ -101,7 +101,7 @@ export default function Header() {
                     </div>
                     </Link>
                     <div className={`flex items-center ml-16 cursor-pointer ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`} onClick={searchOpen ? toggleSearch :toggleSideDrawer}>
-                        <Image src={sideDrawer || searchOpen ? "https://res.cloudinary.com/dyuydfuew/image/upload/uploads/close_056bf5ed87.svg" : "https://res.cloudinary.com/dyuydfuew/image/upload/uploads/menu_b8b132337f.svg"} width={20} height={20} alt=""></Image>
+                        <Image src={sideDrawer || searchOpen ? "https://res.cloudinary.com/dyuydfuew/image/upload/v1687631533/close_76c2d4d963.svg" : "https://res.cloudinary.com/dyuydfuew/image/upload/v1687693979/menu_6b673865e6.png"} width={20} height={20} alt=""></Image>
                         <li className={`pl-[6px] ${sideDrawer || searchOpen ? "text-[#CBB181]" : ""}`}>
                             {sideDrawer || searchOpen ? "Close" : "Menu"}
                         </li>

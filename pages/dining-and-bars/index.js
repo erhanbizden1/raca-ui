@@ -27,7 +27,7 @@ export default function DiningAndBars({ homeData }) {
                                     <div className="max-w-[504px] relative mt-[32px] lg:mt-0 m-auto lg:m-0 " key={cardItem.id}>
                                         <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.97] "></div>
                                         <Image
-                                            src={`https://res.cloudinary.com/dyuydfuew/image/upload${cardItem?.cardImage.data.attributes.url}`}
+                                            src={cardItem?.cardImage.data.attributes.url}
                                             alt={`Card Image`}
                                             width={504}
                                             height={346}

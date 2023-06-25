@@ -42,7 +42,7 @@ export default function ContactUs({ contactUs }) {
                     </div>
                     <div>
                         <div className="relative">
-                            <Image src={`https://res.cloudinary.com/dyuydfuew/image/upload${contactUs?.thumbnail?.data?.attributes?.url}`} width={13} layout="responsive" height={13} alt=""></Image>
+                            <Image src={contactUs?.thumbnail?.data?.attributes?.url} width={13} layout="responsive" height={13} alt=""></Image>
                         </div>
                         <h2 className="pt-[48px] mb-[24px] font-bold text-[28px] text-[#000C1F]">
                             {contactUs.accordionTitle}
