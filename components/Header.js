@@ -93,7 +93,7 @@ export default function Header() {
                     <Link href="/log-in">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`}>
                     
-                        <Image src="https://res.cloudinary.com/dyuydfuew/image/upload/v1687631498/login_66ff7863cf.svg" width={20} height={20} alt=""></Image>
+                        <Image src="https://res.cloudinary.com/dyuydfuew/image/upload/v1687780616/login_5b51b93f22.svg" width={20} height={20} alt=""></Image>
                         <li className="pl-[6px]">
                             Log In
                         </li>
