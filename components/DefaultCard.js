@@ -10,6 +10,9 @@ export default function DefaultCard({ cardItem, seeDetailsActive }) {
                 alt={`Card Image`}
                 width={504}
                 height={346}
+                className="max-h-[300px]"
+                objectFit="cover"
+                layout="responsive"
             />
             <div className="px-[34px] pt-[24px] pb-[36px] flex flex-col justify-between ">
                 <div>

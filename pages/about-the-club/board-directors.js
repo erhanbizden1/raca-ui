@@ -34,14 +34,14 @@ export default function BoardDirectors({ directors }) {
                                                 <div className="absolute top-0 left-0 scale-[0.95] xl:hover:scale-[1.05] cursor-pointer transform transition-all  ease-in-out w-full h-full border border-border "></div>
                                                 <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
                                                 <div className="absolute left-1/2 -translate-x-1/2 ">
-                                                    <button className="opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
+                                                    <button className="group opacity-0 bottom-[85px] px-[30px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
                                                         <span className="mr-[12px] text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
                                                         <Image
                                                             src="/rightArrow.svg"
                                                             alt={"arrow"}
                                                             width={19}
                                                             height={13}
-                                                            className="translate-x-0 transition ease-in-out"
+                                                            className="group-hover:-translate-x-[170px] translate-x-0 transition ease-in-out"
                                                         />
                                                     </button>
                                                 </div>
@@ -73,14 +73,14 @@ export default function BoardDirectors({ directors }) {
                                                 <div className="absolute top-0 left-0 scale-[0.95] xl:hover:scale-[1.05] cursor-pointer transform transition-all  ease-in-out w-full h-full border border-border "></div>
                                                 <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
                                                 <div className="absolute left-1/2 -translate-x-1/2 ">
-                                                    <button className="opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
+                                                    <button className="group opacity-0 bottom-[85px] px-[50px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
                                                         <span className="mr-[12px] text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
                                                         <Image
                                                             src="/rightArrow.svg"
                                                             alt={"arrow"}
                                                             width={19}
                                                             height={13}
-                                                            className="translate-x-0 transition ease-in-out"
+                                                            className="group-hover:-translate-x-[130px] translate-x-0 transition ease-in-out"
                                                         />
                                                     </button>
                                                 </div>
@@ -112,14 +112,14 @@ export default function BoardDirectors({ directors }) {
                                                 <div className="absolute top-0 left-0 scale-[0.95] xl:hover:scale-[1.05] cursor-pointer transform transition-all  ease-in-out w-full h-full border border-border "></div>
                                                 <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
                                                 <div className="absolute left-1/2 -translate-x-1/2 ">
-                                                    <button className="opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
+                                                    <button className="group opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
                                                         <span className="mr-[12px] text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
                                                         <Image
                                                             src="/rightArrow.svg"
                                                             alt={"arrow"}
                                                             width={19}
                                                             height={13}
-                                                            className="translate-x-0 transition ease-in-out"
+                                                            className="group-hover:-translate-x-[130px] translate-x-0 transition ease-in-out"
                                                         />
                                                     </button>
                                                 </div>
