@@ -52,7 +52,7 @@ export default function DiningAndBars({ homeData }) {
                                                         <h2 className="text-black text-[28px] font-bold mb-2">{defaultCardBig.title}</h2>
                                                         <p className="text-[#3D4655] m-0 xl:max-w-[400px]">{defaultCardBig.desc}</p>
                                                     </div>
-                                                    <Link href={`/club-news${defaultCardBig.buttonSlug ? defaultCardBig.buttonSlug : ""}`}>
+                                                    <Link href={`${defaultCardBig.buttonSlug ? defaultCardBig.buttonSlug : ""}`}>
                                                         <button className="group md:px-[73px] xl:mr-[20px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton md:w-max justify-center mt-[10px] md:mt-[54px] xl:hover:bg-black text-white flex viewDetails">
                                                             <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] group-hover:text-white">{defaultCardBig?.buttonText}</span>
                                                             <Image
@@ -102,7 +102,7 @@ export default function DiningAndBars({ homeData }) {
                                                 {
                                                     cardItem.seeDetailsActive ?
                                                         <div className="flex items-center  mt-[36px]">
-                                                            <Link href={`/club-news${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
+                                                            <Link href={`${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
                                                                 <button className="xl:min-w-[280px] mt- lg:px-[20px] border-[2px] mr-[24px] border-black py-[15px] flex items-center relative discoverButton w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
                                                                     <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
                                                                     <Image
@@ -116,7 +116,7 @@ export default function DiningAndBars({ homeData }) {
                                                             </Link>
                                                             <span className="text-lg underline">SEE DETAILS</span>
                                                         </div> :
-                                                        <Link href={`/club-news${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
+                                                        <Link href={`${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
                                                             <button className="mt-[36px] lg:px-[20px] border-[2px] border-black py-[15px] flex items-center relative discoverButton !w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
                                                                 <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
                                                                 <Image
