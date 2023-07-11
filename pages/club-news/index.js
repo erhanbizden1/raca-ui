@@ -36,6 +36,7 @@ export default function DiningAndBars({ homeData }) {
                                 if (defaultCardBig.bigCard) {
                                     return (
                                         <div key={defaultCardBig.id} className="w-full relative bg-[#C2C5C9] xl:bg-transparent">
+                                        <div className="absolute top-0 left-0 h-full w-full bg-black opacity-50 z-20"></div>
                                             <div className="relative p-2 ">
                                                 <Image
                                                     src={defaultCardBig?.cardImage?.data?.attributes?.url}
@@ -46,15 +47,15 @@ export default function DiningAndBars({ homeData }) {
                                                     layout="responsive"
                                                 />
                                             </div>
-                                            <div className="xl:absolute p-6 xl:p-0 bottom-12 left-12">
+                                            <div className="xl:absolute p-6 xl:p-0 bottom-12 left-12 z-30">
                                                 <div className="flex flex-col justify-between h-full">
                                                     <div>
-                                                        <h2 className="text-black text-[28px] font-bold mb-2">{defaultCardBig.title}</h2>
-                                                        <p className="text-[#3D4655] m-0 xl:max-w-[400px]">{defaultCardBig.desc}</p>
+                                                        <h2 className="text-black lg:text-white text-[28px] font-bold mb-2">{defaultCardBig.title}</h2>
+                                                        <p className="text-[#3D4655] lg:text-white m-0 xl:max-w-[400px]">{defaultCardBig.desc}</p>
                                                     </div>
                                                     <Link href={`${defaultCardBig.buttonSlug ? defaultCardBig.buttonSlug : ""}`}>
-                                                        <button className="group md:px-[73px] xl:mr-[20px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton md:w-max justify-center mt-[10px] md:mt-[54px] xl:hover:bg-black text-white flex viewDetails">
-                                                            <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] group-hover:text-white">{defaultCardBig?.buttonText}</span>
+                                                        <button className="group md:px-[73px] xl:mr-[20px] border-[2px] xl:hover:border-transparent border-[#3D4655] lg:border-[white] py-[15px]  items-center relative discoverButton md:w-max justify-center mt-[10px] md:mt-[54px] xl:hover:bg-black text-white flex viewDetails imgFilter w-full">
+                                                            <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] lg:text-white group-hover:text-white">{defaultCardBig?.buttonText}</span>
                                                             <Image
                                                                 src="/rightArrow.svg"
                                                                 alt={"arrow"}

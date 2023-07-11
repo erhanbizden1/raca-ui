@@ -20,7 +20,7 @@ export default function BoardDirectors({ directors }) {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index === 0) {
                                 return (
-                                    <div key={overlayItem.id} className="overflow-hidden min-w-[300px] m-auto">
+                                    <div key={overlayItem.id} className="overflow-hidden min-w-[300px] m-auto group">
                                         <div className="relative overlayItemImage">
                                             <Image
                                                 src={overlayItem?.cardImage?.data?.attributes?.url}
@@ -32,17 +32,10 @@ export default function BoardDirectors({ directors }) {
                                             />
                                             <div>
                                                 <div className="absolute top-0 left-0 scale-[0.95] xl:hover:scale-[1.05] cursor-pointer transform transition-all  ease-in-out w-full h-full border border-border "></div>
-                                                <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
+                                                <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center group-hover:bottom-[70px]">{overlayItem.title}</h2>
                                                 <div className="absolute left-1/2 -translate-x-1/2 ">
-                                                    <button className="opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
-                                                        <span className="mr-[12px] text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
-                                                        <Image
-                                                            src="/rightArrow.svg"
-                                                            alt={"arrow"}
-                                                            width={19}
-                                                            height={13}
-                                                            className="translate-x-0 transition ease-in-out"
-                                                        />
+                                                    <button className="group opacity-0 bottom-[85px] px-[30px] border-[2px] xl:hover:border-transparent border-white py-[15px] relative min-w-[268px] xl:hover:bg-black text-white border-none bg-transparent hover:!bg-transparent items-center !block m-0">
+                                                        <span className="text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
                                                     </button>
                                                 </div>
                                             </div>
@@ -59,7 +52,7 @@ export default function BoardDirectors({ directors }) {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index !== 0) {
                                 return (
-                                    <div key={overlayItem.id} className="w-full lg:max-w-[300px] m-auto">
+                                    <div key={overlayItem.id} className="w-full lg:max-w-[300px] m-auto group">
                                         <div className="relative overlayItemImage">
                                             <Image
                                                 src={overlayItem?.cardImage?.data?.attributes?.url}
@@ -71,17 +64,10 @@ export default function BoardDirectors({ directors }) {
                                             />
                                             <div>
                                                 <div className="absolute top-0 left-0 scale-[0.95] xl:hover:scale-[1.05] cursor-pointer transform transition-all  ease-in-out w-full h-full border border-border "></div>
-                                                <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center">{overlayItem.title}</h2>
+                                                <h2 className="absolute left-1/2 -translate-x-1/2 bottom-[32px] text-white lg:text-[28px] text-[24px] font-bold transition-all  ease-in-out w-max max-w-[300px] text-center group-hover:bottom-[70px]">{overlayItem.title}</h2>
                                                 <div className="absolute left-1/2 -translate-x-1/2 ">
-                                                    <button className="opacity-0 bottom-[85px] px-[73px] border-[2px] xl:hover:border-transparent border-white py-[15px]  items-center relative discoverButton min-w-[268px] xl:hover:bg-black text-white flex">
-                                                        <span className="mr-[12px] text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
-                                                        <Image
-                                                            src="/rightArrow.svg"
-                                                            alt={"arrow"}
-                                                            width={19}
-                                                            height={13}
-                                                            className="translate-x-0 transition ease-in-out"
-                                                        />
+                                                    <button className="group opacity-0 bottom-[85px] px-[30px] border-[2px] xl:hover:border-transparent border-white py-[15px] relative min-w-[268px] xl:hover:bg-black text-white border-none bg-transparent hover:!bg-transparent items-center !block m-0">
+                                                        <span className="text-lg transition ease-in-out">{overlayItem?.buttonText}</span>
                                                     </button>
                                                 </div>
                                             </div>

@@ -28,7 +28,7 @@ export default function Accommondation({ accommondation }) {
                                         <div className="max-w-[504px] relative mt-[32px] lg:mt-0 m-auto lg:m-0 ">
                                             <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.97] "></div>
                                             <Image
-                                                src={cardItem?.cardImage.data.attributes.url}
+                                                src={cardItem?.cardImage?.data?.attributes?.url}
                                                 alt={`Card Image`}
                                                 width={504}
                                                 height={346}
@@ -84,13 +84,13 @@ export default function Accommondation({ accommondation }) {
                             accommondation?.defaultCard.map((defaultCardBig) => {
                                 if (defaultCardBig.bigCard) {
                                     return (
-                                        <div key={defaultCardBig.id} className="grid grid-col-2 lg:grid-cols-7 w-full relative">
+                                        <div key={defaultCardBig.id} className="grid grid-col-2 lg:grid-cols-7 w-full relative ">
                                             <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1]"></div>
                                             <div className="col-span-1 lg:col-span-4 py-[15px] lg:py-[36px] px-[15px] md:px-[36px] order-1 ">
                                                 <div className="flex flex-col justify-between h-full">
                                                     <div>
                                                         <h2 className="text-black text-[28px] font-bold mb-2">{defaultCardBig.title}</h2>
-                                                        <p className="text-[#3D4655] max-w-[300px] m-0">Give yourself the advantage. There has never been a better time to join!</p>
+                                                        <p className="text-[#3D4655] max-w-[300px] m-0 descriptionBox" dangerouslySetInnerHTML={{ __html: defaultCardBig.desc }}></p>
                                                     </div>
                                                     {
                                                         defaultCardBig.seeDetailsActive ?
