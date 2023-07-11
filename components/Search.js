@@ -115,7 +115,7 @@ function Search({ show }) {
                                                 <div>
                                                     <div className="text-white font-bold text-[16px] descriptionBox">{cardItem.title}</div>
                                                 </div>
-                                                <Link href={`/club-news/${cardItem.buttonSlug}`}>
+                                                <Link href={`${cardItem.buttonSlug}`}>
                                                 {
                                                     cardItem.seeDetailsActive ?
                                                         <div className="flex items-center  mt-[36px] ">
