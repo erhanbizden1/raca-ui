@@ -25,16 +25,12 @@ function Search({ show }) {
     };
     const searchValClick = (title) => {
         setSearchValueClear(title)
-        setTimeout(()=> {
-            location.reload();
-        },500)
-        
     }
     const itemTemplate = (item) => {
         return (
-            <div className="country-item p-[10px] bg-[white] transition-all ease-in-out duration-500 hover:bg-[rgb(204,204,204)]" onClick={()=> {searchValClick(item.title)}}>
-                <Link href={`/club-news${item.buttonSlug}`}>
-                    <div>{item.title}</div>
+            <div onClick={()=> {searchValClick(item.title)}}>
+                <Link href={`${item.buttonSlug}`}>
+                    <div className="country-item p-[10px] bg-[white] transition-all ease-in-out duration-500 hover:bg-[rgb(204,204,204)]">{item.title}</div>
                 </Link>
             </div>
         );
