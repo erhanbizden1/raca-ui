@@ -86,7 +86,7 @@ function Search({ show }) {
                                     <AutoComplete value={searchValueClear ? searchValueClear :selectedCountry1 } suggestions={filteredCountries} completeMethod={searchCountry} itemTemplate={itemTemplate} field="name" onChange={(e) => setSelectedCountry1(e.value)} aria-label="Countries" dropdownAriaLabel="Select Country" />
                                 </div>
                             </div>
-                            <button className="bg-[#003A8F] w-full text-center py-[14px] text-white text-lg col-span-2" type="submit">LOG IN</button>
+                            <button className="bg-[#003A8F] w-full text-center py-[14px] text-white text-lg col-span-2" type="submit">SEARCH</button>
                         </div>
                         <div className="flex items-center justify-between">
                             <h2 className="font-merriweather text-white mt-[48px] mb-[36px] text-[48px]">Latest News</h2>
