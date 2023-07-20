@@ -6,12 +6,13 @@ export default function CardOverlay(cardOverlay, centerText) {
         <>
             {
                 cardOverlay.cardOverlay?.map((overlayItem) => {
+                    console.log("adsa",overlayItem?.cardImage?.data?.attributes.url)
                     if (!overlayItem.bigCard) {
                         return (
                             <div key={overlayItem.id}>
                                 <div className="relative overlayItemImage h-full w-full min-h-[369px]">
                                     {
-                                        overlayItem?.cardImage?.data?.attributes?.url ?
+                                        overlayItem?.cardImage?.data?.attributes?.url?
                                             <Image
                                                 src={overlayItem?.cardImage?.data?.attributes?.url}
                                                 alt={`Thumbnail`} discoverButton

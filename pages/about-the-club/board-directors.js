@@ -20,7 +20,7 @@ export default function BoardDirectors({ directors }) {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index === 0) {
                                 return (
-                                    <div key={overlayItem.id} className="overflow-hidden min-w-[300px] m-auto group relative">
+                                    <div key={overlayItem.id} className="overflow-hidden max-w-[300px] w-full m-auto group relative">
                                     <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-20"></div>
                                         <div className="relative overlayItemImage">
                                             <Image
@@ -53,7 +53,7 @@ export default function BoardDirectors({ directors }) {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index === 1 || index === 2) {
                                 return (
-                                    <div key={overlayItem.id} className="overflow-hidden min-w-[300px] m-auto group relative">
+                                    <div key={overlayItem.id} className="overflow-hidden max-w-[300px] w-full m-auto group relative">
                                     <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-20"></div>
                                         <div className="relative overlayItemImage">
                                             <Image
@@ -86,7 +86,7 @@ export default function BoardDirectors({ directors }) {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index !== 0 && index !== 1 && index !== 2) {
                                 return (
-                                    <div key={overlayItem.id} className="overflow-hidden min-w-[300px] m-auto group relative">
+                                    <div key={overlayItem.id} className="overflow-hidden max-w-[300px] w-full m-auto group relative">
                                     <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-20"></div>
                                         <div className="relative overlayItemImage">
                                             <Image

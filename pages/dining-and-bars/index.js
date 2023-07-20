@@ -25,13 +25,16 @@ export default function DiningAndBars({ homeData }) {
                             homeData?.defaultCard.map((cardItem) => {
                                 return (
                                     <div className="max-w-[504px] relative mt-[32px] lg:mt-0 m-auto lg:m-0 " key={cardItem.id}>
-                                        <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.97] "></div>
+                                        <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.97] z-10"></div>
+                                        <div className="relative min-h-[346px]">
                                         <Image
                                             src={cardItem?.cardImage.data.attributes.url}
                                             alt={`Card Image`}
-                                            width={504}
-                                            height={346}
+                                            className="w-full"
+                                            objectFit="cover"
+                                            layout="fill"
                                         />
+                                        </div>
                                         <div className="px-[34px] pt-[24px] pb-[36px] flex flex-col justify-between ">
                                             <div>
                                                 <div className="text-black font-bold text-[28px]">{cardItem.title}</div>

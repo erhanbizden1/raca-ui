@@ -12,33 +12,10 @@ export default function FollowTheClub({ follow }) {
       </div>
       <div className="container pb-[100px]">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[12px]">
-          {
-            follow?.embedPostUrl.map((embedItem) => {
-              if (embedItem.Social === "Facebook") {
-                return (
-                  <div key={embedItem.id} className="w-full">
-                    <FacebookEmbed url={embedItem?.embedPostUrl} />
-                  </div>
-                )
-              }
-              if (embedItem.Social === "İnstagram") {
-                return (
-                  <div key={embedItem.id} className="w-full">
-                    <InstagramEmbed url={embedItem?.embedPostUrl} />
-                  </div>
-                )
-              }
-              if (embedItem.Social === "LinkEdin") {
-                return (
-                  <div key={embedItem.id} className="w-full">
-                    <LinkedInEmbed
-                      url={embedItem?.embedPostUrl}
-                    />
-                  </div>
-                )
-              }
-            })
-          }
+            
+            <InstagramEmbed url={follow?.instagram} style={{width:"100%"}} />
+            <FacebookEmbed url={follow?.instagram} style={{width:"100%"}} />
+            <LinkedInEmbed url={follow?.linkedin} style={{width:"100%"}} />
         </div>
       </div>
     </>
@@ -47,10 +24,7 @@ export default function FollowTheClub({ follow }) {
   )
 }
 export async function getServerSideProps() {
-  const pagePopulate = {
-    populate: ['embedPostUrl.social']
-  };
-  const follow = await CallApiFromStrapi.getData('follow-the-club', pagePopulate);
+  const follow = await CallApiFromStrapi.getData('follow-the-club');
 
   return {
     props: {

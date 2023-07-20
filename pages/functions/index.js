@@ -70,7 +70,7 @@ export default function Funcitons({ funcitons }) {
                                             src={cardItem?.cardImage.data.attributes.url}
                                             alt={`Card Image`}
                                             className="w-full"
-                                            objectFit="contain"
+                                            objectFit="cover"
                                             layout="fill"
                                         />
                                     </div>

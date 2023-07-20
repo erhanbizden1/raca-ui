@@ -4,9 +4,9 @@ export default class CallApiFromStrapi {
   static async getData(path, queryString) {
     let fetchUrl = '';
     if(queryString){
-      fetchUrl = `https://gentle-mesa-18522-53cecce22509.herokuapp.com/api/${path}?${qs.stringify(queryString,{encodeValuesOnly: true})}`;
+      fetchUrl = `https://stormy-retreat-84295-2c50adda3169.herokuapp.com/api/${path}?${qs.stringify(queryString,{encodeValuesOnly: true})}`;
     } else {
-      fetchUrl = `https://gentle-mesa-18522-53cecce22509.herokuapp.com/api/${path}`;
+      fetchUrl = `https://stormy-retreat-84295-2c50adda3169.herokuapp.com/api/${path}`;
     }
     
     const response = await fetch(fetchUrl);
