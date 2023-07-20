@@ -3,7 +3,10 @@ import Link from "next/link"
 import { useState } from "react";
 
 export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
-    const [isShown, setIsShown] = useState(false);
+    const [isShown, setIsShown] = useState(0);
+    function indicator(index) {
+        setIsShown(index)
+      }
     return (
         <div className={show ? `sidedrawer transform translate-x-0 fixed top-0 right-0 w-full z-[-1] transition-all bg-[#1E1E1E] duration-500 ease-in-out` : ` fixed top-0 right-0 w-0  z-[5] transform transition-all shadow-lg ease-in-out `}>
             <div className="container xl:flex h-screen pt-[100px] lg:pt-0">
@@ -11,23 +14,16 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                     <ul className="font-merriweather text-[#C2C5C9] text-center xl:text-left text-[24px] xl:text-[36px] leading-[54px] xl:ml-[50px] ">
                         {
                             menuData?.map((menuItem, index) => {
-                                if (index === 0) {
-                                    return (
-                                        <Link key={menuItem.id} href={menuItem.link} className="hover:text-[white]" >
-                                            <div className="relative group hover:text-[white]"
-                                                onMouseEnter={() => setIsShown(true)}
-                                                onMouseLeave={() => setIsShown(false)}
-                                                href={menuItem.link}>
-                                                <li className="cursor-pointer transition-all ease-in-out ">{menuItem.title}</li>
-                                                <div className="border-t w-[80px] absolute top-1/2 left-[-30%] group-hover:left-[-15%] opacity-0 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 transition-all ease-in-out duration-700"></div>
-                                            </div>
-                                        </Link>
-                                    )
-                                }
                                 if (menuItem.link) {
                                     return (
                                         <Link key={menuItem.id} href={menuItem.link} className="hover:text-[white]" >
-                                            <li className="cursor-pointer transition-all ease-in-out ">{menuItem.title}</li>
+                                            <div className="relative group hover:text-[white]"
+                                                onMouseEnter={() => indicator(index)}
+                                                onMouseLeave={() => indicator(0)}
+                                                href={menuItem.link}>
+                                                <li className="cursor-pointer transition-all ease-in-out ">{menuItem.text}</li>
+                                                <div className="border-t w-[80px] absolute top-1/2 left-[-30%] group-hover:left-[-15%] opacity-0 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 transition-all ease-in-out duration-700"></div>
+                                            </div>
                                         </Link>
                                     )
                                 }
@@ -109,9 +105,17 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                                 </li>
                             </ul>
                             :
-                            <ul className="hidden xl:block text-[#C2C5C9] text-center leading-[30px] text-[20px] border border-border transition-all duration-700 ease-in-out px-[5px] py-[5px] min-w-[504px] h-fit hamburgerRightSide relative min-h-[504px">
-                                <Image src={hamburgerMenuRight.hoverImg.data.attributes.url} layout="responsive" width={504} height={563} objectFit="contain" alt="" ></Image>
-                            </ul>
+                            <li className="hidden xl:block text-[#C2C5C9] text-center leading-[30px] text-[20px] transition-all duration-700 ease-in-out px-[5px] py-[5px] min-w-[504px] h-fit hamburgerRightSide relative min-h-[504px]">
+                            <div  className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.03]"></div>
+                          
+                                        <Image src={menuData[isShown].hoverImg.data.attributes.url} className="w-full "
+                                            objectFit="cover"
+                                            layout="fill"
+                                            alt="Image"></Image> 
+                                              {
+                                console.log(menuData[isShown].hoverImg.data.attributes.url)
+                            }
+                            </li>
 
                     }
 

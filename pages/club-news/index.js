@@ -90,7 +90,7 @@ export default function DiningAndBars({ homeData }) {
                                                     alt={`Card Image`}
                                                     width={372}
                                                     height={247}
-                                                    className="max-h-[247px]"
+                                                    className="min-h-[247px]"
                                                     objectFit="cover"
                                                     layout="responsive"
                                                 />
@@ -104,28 +104,28 @@ export default function DiningAndBars({ homeData }) {
                                                     cardItem.seeDetailsActive ?
                                                         <div className="flex items-center  mt-[36px]">
                                                             <Link href={`${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
-                                                                <button className="xl:min-w-[280px] mt- lg:px-[20px] border-[2px] mr-[24px] border-black py-[15px] flex items-center relative discoverButton w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
+                                                                <button className="group xl:min-w-[280px] mt- lg:px-[20px] border-[2px] mr-[24px] border-black py-[15px] flex items-center relative discoverButton w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
                                                                     <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
                                                                     <Image
                                                                         src="/rightArrow.svg"
                                                                         alt={"arrow"}
                                                                         width={19}
                                                                         height={13}
-                                                                        className="translate-x-0 transition ease-in-out"
+                                                                        className="group-hover:-translate-x-[140px] translate-x-0 transition ease-in-out"
                                                                     />
                                                                 </button>
                                                             </Link>
                                                             <span className="text-lg underline">SEE DETAILS</span>
                                                         </div> :
                                                         <Link href={`${cardItem.buttonSlug ? cardItem.buttonSlug : ""}`}>
-                                                            <button className="mt-[36px] lg:px-[20px] border-[2px] border-black py-[15px] flex items-center relative discoverButton !w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
+                                                            <button className="group mt-[36px] lg:px-[20px] border-[2px] border-black py-[15px] flex items-center relative discoverButton !w-full lg:w-max justify-center xl:hover:bg-black xl:hover:text-white">
                                                                 <span className="mr-[12px] text-lg transition ease-in-out">{cardItem.buttonText}</span>
                                                                 <Image
                                                                     src="/rightArrow.svg"
                                                                     alt={"arrow"}
                                                                     width={19}
                                                                     height={13}
-                                                                    className="translate-x-0 transition ease-in-out"
+                                                                    className="group-hover:-translate-x-[140px] translate-x-0 transition ease-in-out"
                                                                 />
                                                             </button>
                                                         </Link>

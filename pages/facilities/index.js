@@ -23,7 +23,7 @@ export default function Facilites({ facilites }) {
                                             src={cardItem?.cardImage.data.attributes.url}
                                             alt={`Card Image`}
                                             className="w-full"
-                                            objectFit="contain"
+                                            objectFit="cover"
                                             layout="fill"
                                         />
                                         </div>

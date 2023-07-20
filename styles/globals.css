@@ -93,6 +93,7 @@
 .swiperCustom {
   overflow: inherit !important;
   clip-path: inset(-100vw -100vw -100vw 0);
+
 }
 
 .swiperCustom .swiper-wrapper {

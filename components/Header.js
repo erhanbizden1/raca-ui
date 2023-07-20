@@ -11,7 +11,6 @@ export default function Header() {
     const [headerData, setHeaderData] = useState(null);
     const [sideDrawer, setSideDrawer] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
-
     const toggleSideDrawer = useCallback(() => { drawerToggleClickHandler(); }, []);
     const drawerToggleClickHandler = () => {
         setSideDrawer((prevState) => !prevState);
@@ -24,7 +23,7 @@ export default function Header() {
     }
     const getHeaderData = async () => {
         const headerPopulate = {
-            populate: ['leftMenuItem.menuItemIcon', 'logo', 'hamburgerMenu','hamburgerMenuRight.menuItem','hamburgerMenuRight.socialMedia.icon','hamburgerMenuRight.hoverImg']
+            populate: ['leftMenuItem.menuItemIcon', 'logo', 'hamburgerMenu.hoverImg','hamburgerMenuRight.menuItem','hamburgerMenuRight.socialMedia.icon','hamburgerMenuRight.hoverImg']
         };
         const headerData = await CallApiFromStrapi.getData('header', headerPopulate).catch((error) => console.log(error));
         setHeaderData(headerData?.data?.attributes);
@@ -65,7 +64,7 @@ export default function Header() {
 
     return (
 
-        <div className={classNames(sideDrawer || searchOpen ? "text-white" : "text-black ", `container py-6 ${headerClass} text-[20px] ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "text-white" : "text-black"} transition-all ease-in-out relative z-10`)}>
+        <div className={classNames(sideDrawer || searchOpen ? "text-white" : "text-black ", `container py-6 ${headerClass} text-[20px] ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "text-white" : "text-black"} transition-all ease-in-out relative z-50`)}>
             <Search show={searchOpen} />
             <div className="flex justify-between">
                 <HamburgerMenu show={sideDrawer} menuData={headerData?.hamburgerMenu} hamburgerMenuRight={headerData?.hamburgerMenuRight}/>

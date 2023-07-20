@@ -10,7 +10,7 @@ export default function DefaultCard({ cardItem, seeDetailsActive }) {
                 alt={`Card Image`}
                 width={504}
                 height={346}
-                className="max-h-[300px]"
+                className="max-h-[300px] h-full"
                 objectFit="cover"
                 layout="responsive"
             />

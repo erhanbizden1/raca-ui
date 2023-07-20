@@ -39,10 +39,16 @@ export default function ContactUs({ contactUs }) {
                         <div>
                             <div className="!text-[#3D4655] font-[500] text-lg" dangerouslySetInnerHTML={{ __html: contactUs.description }} ></div>
                         </div>
+                        <div>
+                            <div className="!text-[#3D4655] font-[500] text-lg mt-20" dangerouslySetInnerHTML={{ __html: contactUs.descriptionTwo }} ></div>
+                        </div>
                     </div>
                     <div>
                         <div className="relative">
-                            <Image src={contactUs?.thumbnail?.data?.attributes?.url} width={13} layout="responsive" height={13} alt=""></Image>
+                        {
+                            console.log(contactUs?.thumbnail)
+                        }
+                            <Image src={contactUs?.thumbnail?.data[0]?.attributes?.url} width={13} layout="responsive" height={13} alt=""></Image>
                         </div>
                         <h2 className="pt-[48px] mb-[24px] font-bold text-[28px] text-[#000C1F]">
                             {contactUs.accordionTitle}

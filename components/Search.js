@@ -25,16 +25,12 @@ function Search({ show }) {
     };
     const searchValClick = (title) => {
         setSearchValueClear(title)
-        setTimeout(()=> {
-            location.reload();
-        },500)
-        
     }
     const itemTemplate = (item) => {
         return (
-            <div className="country-item p-[10px] bg-[white] transition-all ease-in-out duration-500 hover:bg-[rgb(204,204,204)]" onClick={()=> {searchValClick(item.title)}}>
-                <Link href={`/club-news${item.buttonSlug}`}>
-                    <div>{item.title}</div>
+            <div onClick={()=> {searchValClick(item.title)}}>
+                <Link href={`${item.buttonSlug}`}>
+                    <div className="country-item p-[10px] bg-[white] transition-all ease-in-out duration-500 hover:bg-[rgb(204,204,204)]">{item.title}</div>
                 </Link>
             </div>
         );
@@ -86,7 +82,7 @@ function Search({ show }) {
                                     <AutoComplete value={searchValueClear ? searchValueClear :selectedCountry1 } suggestions={filteredCountries} completeMethod={searchCountry} itemTemplate={itemTemplate} field="name" onChange={(e) => setSelectedCountry1(e.value)} aria-label="Countries" dropdownAriaLabel="Select Country" />
                                 </div>
                             </div>
-                            <button className="bg-[#003A8F] w-full text-center py-[14px] text-white text-lg col-span-2" type="submit">LOG IN</button>
+                            <button className="bg-[#003A8F] w-full text-center py-[14px] text-white text-lg col-span-2" type="submit">SEARCH NEWS</button>
                         </div>
                         <div className="flex items-center justify-between">
                             <h2 className="font-merriweather text-white mt-[48px] mb-[36px] text-[48px]">Latest News</h2>
