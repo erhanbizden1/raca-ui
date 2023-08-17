@@ -58,7 +58,7 @@ function Search({ show }) {
                     <div className={`flex items-center overflow-auto py-[25px] text-sm`}>
                         <div className={`cursor-pointer hover:text-lava mr-5 flex items-center `}>
                             <Link href="/">
-                                HomaPage
+                                Home Pages
                             </Link>
                             <div className="ml-[10px]">
                                 {">"}
