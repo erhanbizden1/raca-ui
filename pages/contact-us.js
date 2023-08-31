@@ -4,6 +4,7 @@ import * as Accordion from '@radix-ui/react-accordion';
 import React from 'react';
 import classNames from 'classnames';
 import BreadCrumb from "../components/BreadCrumb";
+import Head from "next/head";
 
 export default function ContactUs({ contactUs }) {
     const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
@@ -31,6 +32,9 @@ export default function ContactUs({ contactUs }) {
     ));
     return (
         <>
+            <Head>
+                <title>Royal Automobile Club of Australia - {contactUs.title}</title>
+            </Head>
             <BreadCrumb color="" staticText="Direction and Contacts" />
             <div className="container mb-[100px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:my-[50px] items-start">
@@ -45,9 +49,9 @@ export default function ContactUs({ contactUs }) {
                     </div>
                     <div>
                         <div className="relative">
-                        {
-                            console.log(contactUs?.thumbnail)
-                        }
+                            {
+                                console.log(contactUs?.thumbnail)
+                            }
                             <Image src={contactUs?.thumbnail?.data[0]?.attributes?.url} width={13} layout="responsive" height={13} alt=""></Image>
                         </div>
                         <h2 className="pt-[48px] mb-[24px] font-bold text-[28px] text-[#000C1F]">

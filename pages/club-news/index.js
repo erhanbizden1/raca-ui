@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,6 +12,9 @@ export default function DiningAndBars({ homeData }) {
     }, [homeData])
     return (
         <div>
+        <Head>
+            <title>Royal Automobile Club of Australia - {homeData.title}</title>
+        </Head>
             <style jsx global>{`
                 body {
                     background-color: #EBECED;
