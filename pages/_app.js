@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div id="app">
       <Head>
-        <title>THE ROYAL - AUTOMOBILE CLUB OF AUSTRALIA</title>
+        <link rel="icon" href="https://res.cloudinary.com/dyuydfuew/image/upload/v1687694132/RACA_Logo_26bb189bd5.svg" sizes="any" />
       </Head>
       <Header />
       <Component {...pageProps} />

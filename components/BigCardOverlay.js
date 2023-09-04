@@ -19,14 +19,14 @@ export default function BigCardOverlay(cardOverlay) {
                                         {
                                             bigOverlayItem.buttonSlug &&
                                             <Link href={bigOverlayItem.buttonSlug}>
-                                                <button className="group lg:px-[73px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative discoverButton w-full lg:w-max justify-center mt-[10px] lg:mt-0 xl:hover:bg-black text-white flex viewDetails  !duration-500">
-                                                    <span className="mr-[12px] text-lg transition ease-in-out text-[#3D4655] group-hover:text-white">{bigOverlayItem?.buttonText}</span>
+                                                <button className="group lg:px-[73px] border-[2px] xl:hover:border-transparent border-[#3D4655] py-[15px]  items-center relative w-full lg:w-max justify-center mt-[10px] lg:mt-0 xl:hover:bg-black text-white flex viewDetails  !duration-500">
+                                                    <span className="mr-[12px] text-lg ease-in-out text-[#3D4655] group-hover:text-white">{bigOverlayItem?.buttonText}</span>
                                                     <Image
                                                         src="/rightArrow.svg"
                                                         alt={"arrow"}
                                                         width={19}
                                                         height={13}
-                                                        className="group-hover:-translate-x-[100px] translate-x-0 transition ease-in-out"
+                                                        className="transition ease-in-out"
                                                     />
                                                 </button>
                                             </Link>

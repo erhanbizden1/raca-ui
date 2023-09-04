@@ -31,15 +31,15 @@ export default function Footer() {
                             return (
                                 <div key={index} className="mr-16">
                                     <li >
-                                        <Link href={menuItem.link}>
+                                        <Link href={menuItem.link ? menuItem.link : ""}>
                                             {menuItem?.text}
                                         </Link>
                                     </li>
                                     {
-                                        menuItem.subMenuItem.map((subItem, subIndex) => {
+                                        menuItem?.subMenuItem.map((subItem, subIndex) => {
                                             return (
                                                 <li key={subIndex} className="mt-9">
-                                                    <Link href={subItem.link}>
+                                                    <Link href={subItem.link ? subItem.link : ""}>
                                                         {subItem?.text}
                                                     </Link>
                                                 </li>
