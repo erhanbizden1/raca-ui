@@ -89,7 +89,7 @@ export default function Header() {
                             Search
                         </li>
                     </div>
-                    <Link href="/login">
+                    <Link href="https://members.raca.com.au/">
                     <div className={`hidden xl:flex items-center ml-16 cursor-pointer ${sideDrawer || searchOpen ? "imgFilter" : ""} ${router.pathname === "/reciprocal-clubs" || router.pathname === "/about-the-club" || router.pathname === "/accommodation" || router.pathname === "/functions" ? "imgFilter" : ""}`}>
                     
                         <Image src="https://res.cloudinary.com/dyuydfuew/image/upload/v1687780616/login_5b51b93f22.svg" width={20} height={20} alt=""></Image>
