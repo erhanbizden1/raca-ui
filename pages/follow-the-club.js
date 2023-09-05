@@ -14,11 +14,9 @@ export default function FollowTheClub({ follow }) {
         <BreadCrumb />
       </div>
       <div className="container pb-[100px]">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[12px]">
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[12px]">
           <InstagramEmbed url={follow?.instagram} style={{ width: "100%" }} />
           <FacebookEmbed url={follow?.facebook} style={{ width: "100%" }} />
-          <LinkedInEmbed url={follow?.linkedin} style={{ width: "100%" }} />
         </div>
       </div>
     </>
