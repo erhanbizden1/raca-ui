@@ -39,9 +39,6 @@ export default function SliderContent({ sliderContent,color }) {
                             return (
                                 <SwiperSlide key={sliderItem.id} className="!flex items-start pl-[10px]"><div className="relative w-full">
                                     <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.05]"></div>
-                                    {
-                                        console.log(sliderItem)
-                                    }
                                     <Image src={sliderItem.thumbnail.data[0].attributes.url} width={13} layout="responsive" height={13} alt=""></Image> 
 
                                 </div></SwiperSlide>

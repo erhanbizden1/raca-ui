@@ -45,9 +45,6 @@ export default function ContactUs({ contactUs }) {
                     </div>
                     <div>
                         <div className="relative">
-                        {
-                            console.log(contactUs?.thumbnail)
-                        }
                             <Image src={contactUs?.thumbnail?.data[0]?.attributes?.url} width={13} layout="responsive" height={13} alt=""></Image>
                         </div>
                         <h2 className="pt-[48px] mb-[24px] font-bold text-[28px] text-[#000C1F]">
