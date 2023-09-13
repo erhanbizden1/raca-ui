@@ -113,7 +113,6 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                                             layout="fill"
                                             alt="Image"></Image> 
                                               {
-                                console.log(menuData[isShown].hoverImg.data.attributes.url)
                             }
                             </li>
 

@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import Head from "next/head";
 export default function Home({ homeData }) {
+  console.log(homeData.slider);
   return (
     <>
     <Head>

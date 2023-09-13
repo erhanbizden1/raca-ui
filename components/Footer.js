@@ -15,7 +15,6 @@ export default function Footer() {
     useEffect(() => {
         getFooterData();
     }, []);
-    console.log(footerData);
     return (
         <div className="bg-bg-blue text-white py-16 hidden md:block">
             <div className="container flex-none lg:flex items-center justify-between">

@@ -6,7 +6,6 @@ export default function CardOverlay(cardOverlay, centerText) {
         <>
             {
                 cardOverlay.cardOverlay?.map((overlayItem) => {
-                    console.log("adsa",overlayItem?.cardImage?.data?.attributes.url)
                     if (!overlayItem.bigCard) {
                         return (
                             <div key={overlayItem.id}>
