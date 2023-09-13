@@ -32,7 +32,7 @@ export default function BreadCrumb({ staticText, secondText, thirdText, forthTex
         <div className={`flex items-center overflow-auto py-[25px] text-sm`} style={{color:color}}>
           <div className={`cursor-pointer hover:text-lava mr-5 flex items-center `}>
             <Link href="/">
-              HomaPage
+              Home Page
             </Link>
             <div className="ml-[10px]">
               {">"}

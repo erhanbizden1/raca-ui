@@ -15,7 +15,7 @@ export default function BoardDirectors({ directors }) {
             <BreadCrumb />
             <SliderContent sliderContent={directors}/>
             <section className="bg-[#FFFF] py-[65px]">
-                <div className="grid grid-cols-1 justify-center gap-[20px] lg:gap-[24px] xl:px-[150px]    ">
+                <div className="grid grid-cols-1 justify-center gap-[20px] p-[15px] lg:gap-[24px] xl:px-[150px]    ">
                     {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index === 0) {
@@ -45,13 +45,12 @@ export default function BoardDirectors({ directors }) {
 
                     }
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-[20px] px-[15px] lg:gap-[160px] xl:px-[72px] my-[15px]  lg:my-[100px] ">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-[20px] px-[15px] lg:gap-[50px] my-[15px]  lg:my-[100px] ">
                     {
                         directors?.cardOverlay.map((overlayItem, index) => {
                             if (index !== 0) {
                                 return (
                                     <div key={overlayItem.id} className="overflow-hidden max-w-[300px] w-full m-auto group relative">
-
                                         <div className="relative overlayItemImage h-[300px]">
                                             <Image
                                                 src={overlayItem?.cardImage?.data?.attributes?.url}
