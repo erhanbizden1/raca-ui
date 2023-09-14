@@ -23,6 +23,7 @@ export default function Footer() {
                         <Image src={`https://res.cloudinary.com/dyuydfuew/image/upload/v1687694132/RACA_Logo_26bb189bd5.svg`} width={108} height={131} alt=""></Image>
                     </div>
                     <span className="text-[20px]">{footerData?.text}</span>
+                    <span>ABN 44000016044 | 02 8273 2300</span>
                 </div>
                 <ul className="flex-none flex item-center text-[20px] mt-[128px] lg:mt-0">
                     {
