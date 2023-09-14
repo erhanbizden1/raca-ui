@@ -15,6 +15,11 @@ export default function Home({ homeData }) {
     <>
     <Head>
       <title>Royal Automobile Club of Australia - Home</title>
+      <meta
+          name="description"
+          content="The Royal Automobile Club of Australia (RACA) Incorporating Imperial Service Club was founded in 1903 and has since retained its enthusiasm for all things motoring while also offering a variety of special interest groups, activities, and events for its members. "
+          key="desc"
+        />
     </Head>
       <div className="container mb-[100px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:my-[130px] items-center">

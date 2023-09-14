@@ -9,6 +9,11 @@ export default function FollowTheClub({ follow }) {
     <>
       <Head>
         <title>Royal Automobile Club of Australia - Follow The Club</title>
+        <meta
+          name="description"
+          content="Follow the club "
+          key="desc"
+        />
       </Head>
       <div className="mb-[100px]">
         <BreadCrumb />
