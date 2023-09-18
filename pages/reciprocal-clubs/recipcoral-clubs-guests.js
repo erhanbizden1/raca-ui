@@ -60,14 +60,14 @@ export default function FındReciprocalClub({ find }) {
                     <Accordion.Root className="AccordionRoot mt-[150px]" type="single" defaultValue="item-1" collapsible>
                         {
                             find?.accordion ?
-                            find?.accordion.map((accItem) => {
-                                return (
-                                    <Accordion.Item key={accItem?.id} className="AccordionItem overflow-hidden w-full text-[20px]" value={`item-${accItem.id}`}>
-                                        <AccordionTrigger>{accItem?.title}</AccordionTrigger>
-                                        <AccordionContent ><span dangerouslySetInnerHTML={{ __html: accItem.description }} className="text-lg"></span></AccordionContent>
-                                    </Accordion.Item>
-                                )
-                            }):""
+                                find?.accordion.map((accItem) => {
+                                    return (
+                                        <Accordion.Item key={accItem?.id} className="AccordionItem overflow-hidden w-full text-[20px]" value={`item-${accItem.id}`}>
+                                            <AccordionTrigger>{accItem?.title}</AccordionTrigger>
+                                            <AccordionContent ><span dangerouslySetInnerHTML={{ __html: accItem.description }} className="text-lg"></span></AccordionContent>
+                                        </Accordion.Item>
+                                    )
+                                }) : ""
                         }
                     </Accordion.Root>
                 </div>

@@ -10,17 +10,19 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import Head from "next/head";
 export default function Home({ homeData }) {
-  console.log(homeData.slider);
   return (
     <>
-    <Head>
-      <title>Royal Automobile Club of Australia - Home</title>
-      <meta
-          name="description"
-          content="The Royal Automobile Club of Australia (RACA) Incorporating Imperial Service Club was founded in 1903 and has since retained its enthusiasm for all things motoring while also offering a variety of special interest groups, activities, and events for its members. "
-          key="desc"
-        />
-    </Head>
+      <Head>
+        {
+          homeData.title ? <title>{`Royal Automobile Club of Australia - ${homeData.title}`}</title> : ""
+        }
+        {
+          homeData.metaDescription ? <meta
+            name="description"
+            content={`${homeData.metaDescription}`}
+          /> : ""
+        }
+      </Head>
       <div className="container mb-[100px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:my-[130px] items-center">
           <h1 className={`text-[38px] md:text-[64px]  md:leading-[80px] lg:pl-0 lg:text-[88px] text-blue font-merriweather leading-[54px] lg:leading-[111px] font-bold`}>{homeData.title}</h1>
@@ -35,42 +37,42 @@ export default function Home({ homeData }) {
         </div>
       </div>
       {
-        homeData?.slider.length > 0 ? 
-        <Swiper
-        slidesPerView={1}
-        spaceBetween={1}
-        navigation={false}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Navigation, Pagination, Autoplay]}
-        className="mySwiper"
-      >
-        {
-          homeData?.slider?.map((sliderItem) => {
-            return(
-            <SwiperSlide key={sliderItem.id}>
-              <div className="relative w-full">
-                <Image
-                  src={sliderItem?.thumbnail.data[0].attributes.url}
-                  alt={sliderItem?.thumbnail.data[0].attributes.name}
-                  width={511}
-                  height={100}
-                  layout="responsive"
-                  objectFit="contain"
-                />
-              </div>
-            </SwiperSlide>
-            )
-          })
-        }
-      </Swiper>
-      :
-      ""
+        homeData?.slider.length > 0 ?
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={1}
+            navigation={false}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
+            className="mySwiper"
+          >
+            {
+              homeData?.slider?.map((sliderItem) => {
+                return (
+                  <SwiperSlide key={sliderItem.id}>
+                    <div className="relative w-full">
+                      <Image
+                        src={sliderItem?.thumbnail.data[0].attributes.url}
+                        alt={sliderItem?.thumbnail.data[0].attributes.name}
+                        width={511}
+                        height={100}
+                        layout="responsive"
+                        objectFit="contain"
+                      />
+                    </div>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
+          :
+          ""
       }
       <section className="container text-black">
         <h1 className="font-merriweather text-[36px] lg:text-[48px] text-center my-[84px] leading-[54px]">{homeData.contentTitle}</h1>

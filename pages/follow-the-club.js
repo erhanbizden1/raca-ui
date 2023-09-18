@@ -1,20 +1,22 @@
 import CallApiFromStrapi from "../components/CallApiFromStrapi";
 import { FacebookEmbed } from 'react-social-media-embed';
 import { InstagramEmbed } from 'react-social-media-embed';
-import { LinkedInEmbed } from 'react-social-media-embed';
 import BreadCrumb from '../components/BreadCrumb'
 import Head from "next/head";
 export default function FollowTheClub({ follow }) {
   return (
     <>
       <Head>
-        <title>Royal Automobile Club of Australia - Follow The Club</title>
-        <meta
-          name="description"
-          content="Follow the club "
-          key="desc"
-        />
-      </Head>
+                {
+                  follow.title ? <title>{`Royal Automobile Club of Australia - ${follow.title}`}</title> : ""
+                }
+                {
+                  follow.metaDescription ? <meta
+                        name="description"
+                        content={`${follow.metaDescription}`}
+                    /> : ""
+                }
+            </Head>
       <div className="mb-[100px]">
         <BreadCrumb />
       </div>
