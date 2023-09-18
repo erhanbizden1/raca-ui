@@ -7,10 +7,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 export default function SliderContent({ sliderContent, color }) {
+    console.log(sliderContent);
     return (
         <>
             <Head>
-                <title>Royal Automobile Club of Australia - {sliderContent.title}</title>
+                {
+                    sliderContent.title ? <title>{`Royal Automobile Club of Australia - ${sliderContent.title}`}</title> : ""
+                }
+                {
+                    sliderContent.metaDescription ? <meta
+                        name="description"
+                        content={`${sliderContent.metaDescription}`}
+                    /> : ""
+                }
             </Head>
             <div className="container mb-[100px]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:mt-[70px] lg:pb-[100px] ">

@@ -1,3 +1,4 @@
+
 import BreadCrumb from "../../components/BreadCrumb";
 import CallApiFromStrapi from "../../components/CallApiFromStrapi";
 import DefaultCard from "../../components/DefaultCard";
@@ -13,8 +14,8 @@ export default function Reciprocal({ reciprocal }) {
                 }
                 `}
             </style>
-            <BreadCrumb color="white"/>
-            <SliderContent sliderContent={reciprocal} color="white"/>
+            <BreadCrumb color="white" />
+            <SliderContent sliderContent={reciprocal} color="white" />
             <section className=" text-black bg-white py-[124px]">
                 <div className="container">
                     <h1 className="font-merriweather text-[36px] lg:text-[48px] text-center leading-[54px]">{reciprocal.contentTitle}</h1>

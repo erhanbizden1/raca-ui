@@ -33,7 +33,15 @@ export default function ContactUs({ contactUs }) {
     return (
         <>
             <Head>
-                <title>Royal Automobile Club of Australia - {contactUs.title}</title>
+                {
+                    contactUs.title ? <title>{`Royal Automobile Club of Australia - ${contactUs.title}`}</title> : ""
+                }
+                {
+                    contactUs.metaDescription ? <meta
+                        name="description"
+                        content={`${contactUs.metaDescription}`}
+                    /> : ""
+                }
             </Head>
             <BreadCrumb color="" staticText="Direction and Contacts" />
             <div className="container mb-[100px]">
