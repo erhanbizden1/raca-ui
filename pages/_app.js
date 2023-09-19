@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import '../styles/globals.css'
@@ -6,9 +7,9 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   return (
     <div id="app">
+    
       <Head>
-        <link rel="icon" href="https://res.cloudinary.com/dyuydfuew/image/upload/v1687694132/RACA_Logo_26bb189bd5.svg" sizes="any" />
-        <script>
+      <Script>
           {`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -19,10 +20,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '275300132114169');
 fbq('track', 'PageView');`}
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
+        </Script>
+        <Script><img height="1" width="1" style="display:none"
           src="https://www.facebook.com/tr?id=275300132114169&ev=PageView&noscript=1"
-        /></noscript>
+        /></Script>
+        <link rel="icon" href="https://res.cloudinary.com/dyuydfuew/image/upload/v1687694132/RACA_Logo_26bb189bd5.svg" sizes="any" />
+        
       </Head>
       <Header />
       <Component {...pageProps} />
