@@ -1,12 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react";
 import { useState } from "react";
 
 export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
     const [isShown, setIsShown] = useState(0);
+    const mountedStyle = { animation: "inAnimation 250ms ease-in" };
+    const unmountedStyle = {
+        animation: "outAnimation 270ms ease-out",
+        animationFillMode: "forwards"
+    };
     function indicator(index) {
         setIsShown(index)
-      }
+    }
     return (
         <div className={show ? `sidedrawer transform translate-x-0 fixed top-0 right-0 w-full z-[-1] transition-all bg-[#1E1E1E] duration-500 ease-in-out` : ` fixed top-0 right-0 w-0  z-[5] transform transition-all shadow-lg ease-in-out `}>
             <div className="container xl:flex h-screen pt-[100px] lg:pt-0">
@@ -105,15 +111,15 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                                 </li>
                             </ul>
                             :
-                            <li className="hidden xl:block text-[#C2C5C9] text-center leading-[30px] text-[20px] transition-all duration-700 ease-in-out px-[5px] py-[5px] min-w-[504px] h-fit hamburgerRightSide relative min-h-[504px]">
-                            <div  className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.03]"></div>
-                          
-                                        <Image src={menuData[isShown].hoverImg.data.attributes.url} className="w-full "
-                                            objectFit="cover"
-                                            layout="fill"
-                                            alt="Image"></Image> 
-                                              {
-                            }
+                            <li className={`hidden xl:block text-[#C2C5C9] text-center leading-[30px] text-[20px] px-[5px] py-[5px] min-w-[504px] h-fit hamburgerRightSide relative min-h-[504px] transition-all duration-500`}  style={menuData[isShown] !== isShown ? mountedStyle : unmountedStyle}>
+                                <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.03]"></div>
+
+                                <Image src={handleChangeImage(menuData[isShown].hoverImg.data.attributes.url)} className="w-full "
+                                    objectFit="cover"
+                                    layout="fill"
+                                    alt="Image"></Image>
+                                {
+                                }
                             </li>
 
                     }
