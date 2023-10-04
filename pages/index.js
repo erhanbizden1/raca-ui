@@ -56,16 +56,18 @@ export default function Home({ homeData }) {
               homeData?.slider?.map((sliderItem) => {
                 return (
                   <SwiperSlide key={sliderItem.id}>
-                    <div className="relative w-full">
-                      <Image
-                        src={sliderItem?.thumbnail.data[0].attributes.url}
-                        alt={sliderItem?.thumbnail.data[0].attributes.name}
-                        width={511}
-                        height={100}
-                        layout="responsive"
-                        objectFit="contain"
-                      />
-                    </div>
+                    <Link href={sliderItem.link ? sliderItem.link : ""}>
+                      <div className="relative w-full">
+                        <Image
+                          src={sliderItem?.thumbnail.data[0].attributes.url}
+                          alt={sliderItem?.thumbnail.data[0].attributes.name}
+                          width={511}
+                          height={100}
+                          layout="responsive"
+                          objectFit="contain"
+                        />
+                      </div>
+                    </Link>
                   </SwiperSlide>
                 )
               })
