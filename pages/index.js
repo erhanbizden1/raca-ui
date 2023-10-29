@@ -24,15 +24,30 @@ export default function Home({ homeData }) {
         }
       </Head>
       <div className="container mb-[100px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:my-[130px] items-center">
+        <div clxassName="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:my-[130px] items-center">
           <h1 className={`text-[38px] md:text-[64px]  md:leading-[80px] lg:pl-0 lg:text-[88px] text-blue font-merriweather leading-[54px] lg:leading-[111px] font-bold`}>{homeData.title}</h1>
           <div>
             <div className="text-[#000C1F]" dangerouslySetInnerHTML={{ __html: homeData.description }} ></div>
-            <Link href={homeData.buttonLink}>
+            <div className="flex md:flex-row flex-col items-center gap-x-[20px]">
+            {
+              homeData.buttonLink && homeData.buttonText ?
+              <Link href={homeData.buttonLink}>
               <button className="px-[73px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
-                <span className="text-lg transition ease-in-out">Learn More</span>
+                <span className="text-lg transition ease-in-out">{homeData.buttonText}</span>
               </button>
             </Link>
+            :""
+            }
+            {
+              homeData.buttonSecondText && homeData.buttonSecondLink ?
+              <Link href={homeData?.buttonSecondLink}>
+              <button className="px-[73px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
+                <span className="text-lg transition ease-in-out">{homeData?.buttonSecondText}</span>
+              </button>
+            </Link>
+            :""
+            }
+            </div>
           </div>
         </div>
       </div>
