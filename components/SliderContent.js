@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 export default function SliderContent({ sliderContent, color }) {
-    console.log(sliderContent);
     return (
         <>
             <Head>
@@ -28,15 +27,26 @@ export default function SliderContent({ sliderContent, color }) {
                         <div>
                             <div className={` font-[500] text-lg`} dangerouslySetInnerHTML={{ __html: sliderContent.description }} style={{ color: color ? color : "#000C1F", opacity: color ? "opacity-80" : "opacity-100" }}></div>
                         </div>
+                        <div className="flex md:flex-row flex-col items-center gap-x-[20px]">
                         {
                             sliderContent?.buttonLink && sliderContent?.buttonText ?
                                 <Link href={sliderContent.buttonLink}>
-                                    <button className="px-[73px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
+                                    <button className="bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
                                         <span className="text-lg transition ease-in-out">{sliderContent.buttonText}</span>
                                     </button>
                                 </Link>
                                 : ""
                         }
+                        {
+                            sliderContent?.buttonSecondText && sliderContent?.buttonSecondLink ?
+                                <Link href={sliderContent.buttonSecondLink}>
+                                    <button className=" bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
+                                        <span className="text-lg transition ease-in-out">{sliderContent.buttonSecondText}</span>
+                                    </button>
+                                </Link>
+                                : ""
+                        }
+                        </div>
                     </div>
                     <Swiper
                         slidesPerView={1}
