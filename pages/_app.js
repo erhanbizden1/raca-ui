@@ -7,9 +7,16 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   return (
     <div id="app">
-    
       <Head>
-      <Script>
+        {/* Google Tag Mamager */}
+        <script type='text/javascript' async dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M5NTRQTN');`}} />
+        {/* End Google Tag Manager */}
+        <Script>
           {`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -25,11 +32,13 @@ fbq('track', 'PageView');`}
           src="https://www.facebook.com/tr?id=275300132114169&ev=PageView&noscript=1"
         /></Script>
         <link rel="icon" href="https://res.cloudinary.com/dyuydfuew/image/upload/v1687694132/RACA_Logo_26bb189bd5.svg" sizes="any" />
-        
+
       </Head>
       <Header />
       <Component {...pageProps} />
       <Footer />
+      {/* Google Tag Manager (noscript) */}
+      <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5NTRQTN" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
     </div>)
 }
 
