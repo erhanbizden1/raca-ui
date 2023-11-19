@@ -41,7 +41,7 @@ export default function Home({ homeData }) {
             {
               homeData.buttonSecondText && homeData.buttonSecondLink ?
               <Link href={homeData?.buttonSecondLink}>
-              <button className="px-[73px] bg-blue xl:hover:bg-[#002966] transition-all ease-in-out border-[2px] border-black py-[15px] mt-[36px] relative min-w-[268px] text-white">
+              <button className="px-[73px] bg-[#c90136] xl:hover:bg-[#e72458] transition-all ease-in-out border-[2px] border-[#c90136] py-[15px] mt-[36px] relative min-w-[268px] text-white">
                 <span className="text-lg transition ease-in-out">{homeData?.buttonSecondText}</span>
               </button>
             </Link>
@@ -61,7 +61,7 @@ export default function Home({ homeData }) {
               clickable: true,
             }}
             autoplay={{
-              delay: 7000,
+              delay: 12000,
               disableOnInteraction: false,
             }}
             modules={[Navigation, Pagination, Autoplay]}
