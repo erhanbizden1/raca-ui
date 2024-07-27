@@ -98,7 +98,7 @@ function Search({ show }) {
                                             <div className="relative ">
                                                 <div className="border border-border absolute left-0 top-0 w-full h-full scale-[0.96] "></div>
                                                 <Image
-                                                    src={cardItem?.cardImage.data.attributes.url}
+                                                    src={cardItem?.cardImage?.data?.attributes?.url}
                                                     alt={`Card Image`}
                                                     width={372}
                                                     height={247}
