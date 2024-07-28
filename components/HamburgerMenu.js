@@ -114,7 +114,7 @@ export default function HamburgerMenu({ show, menuData, hamburgerMenuRight }) {
                             <li className={`hidden xl:block text-[#C2C5C9] text-center leading-[30px] text-[20px] px-[5px] py-[5px] min-w-[504px] h-fit hamburgerRightSide relative min-h-[504px] transition-all duration-500`}  style={menuData[isShown] !== isShown ? mountedStyle : unmountedStyle}>
                                 <div className="border border-border absolute left-0 top-0 w-full h-full scale-[1.03] scale-y-[1.03]"></div>
 
-                                <Image src={menuData[isShown].hoverImg.data.attributes.url} className="w-full "
+                                <Image src={menuData[isShown]?.hoverImg?.data?.attributes?.url} className="w-full "
                                     objectFit="cover"
                                     layout="fill"
                                     alt="Image"></Image>
